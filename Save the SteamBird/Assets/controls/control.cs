@@ -57,7 +57,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""2D Vector"",
                     ""id"": ""eca6834e-2f10-4395-b476-37c090d6c0d6"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
