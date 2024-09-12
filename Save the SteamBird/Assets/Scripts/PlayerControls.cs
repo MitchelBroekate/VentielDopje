@@ -3,13 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
-    #region WalkMovement
+    #region WalkMovement Variables
     Vector2 moveDirection;
     [SerializeField] float moveSpeed;
     Rigidbody rb;
     #endregion
 
-    #region CamMovement
+    #region CamMovement Variables
     [SerializeField]
     Transform cam;
 
@@ -67,5 +67,10 @@ public class PlayerControls : MonoBehaviour
         cam.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.Rotate(Vector3.up * mouseX);
 
+    }
+
+    void OnCrouch()
+    {
+        
     }
 }
