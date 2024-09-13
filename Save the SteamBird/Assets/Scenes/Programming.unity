@@ -240,8 +240,6 @@ GameObject:
   - component: {fileID: 368145566}
   - component: {fileID: 368145565}
   - component: {fileID: 368145568}
-  - component: {fileID: 368145570}
-  - component: {fileID: 368145569}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -367,75 +365,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &368145569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368145564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 827d24d418320914b91d2616e69c15b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camCrouch: {fileID: 836524224}
-  camUncrouch: {fileID: 2069963125}
---- !u!114 &368145570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368145564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 552b01500a21ec847aa7d75c80cc6861,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7bef264d-b741-491c-9a4b-6733b3a03299
-    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 368145569}
-        m_TargetAssemblyTypeName: CameraCrouch, Assembly-CSharp
-        m_MethodName: Crouch
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 86c631f5-7f80-4ec6-b7fd-1c1b68365588
-    m_ActionName: Player/Crouch[/Keyboard/leftCtrl]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f4e412cc-5633-43a6-9801-9d6edb05d3ac
-    m_ActionName: Player/Interact[/Mouse/leftButton]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &836524223
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +668,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   cam: {fileID: 368145567}
+  camCrouch: {fileID: 836524224}
+  camUncrouch: {fileID: 2069963125}
   mouseSens: 800
 --- !u!114 &1826220910
 MonoBehaviour:

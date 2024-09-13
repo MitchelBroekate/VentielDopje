@@ -115,7 +115,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""1d3f38b0-d6b4-4a46-abb9-2bd41ddc612d"",
                     ""path"": ""<Keyboard>/leftCtrl"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Crouch"",

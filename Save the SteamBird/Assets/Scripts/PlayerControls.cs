@@ -10,8 +10,9 @@ public class PlayerControls : MonoBehaviour
     #endregion
 
     #region CamMovement Variables
-    [SerializeField]
-    Transform cam;
+    [SerializeField] Transform cam;
+    [SerializeField] Transform camCrouch;
+    [SerializeField] Transform camUncrouch;
 
     [SerializeField]
     float mouseSens;
@@ -69,8 +70,16 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    void OnCrouch()
+    void OnCrouch(InputValue value)
     {
-        
+        if(value.isPressed)
+        {
+            cam.position = camCrouch.position;
+        }
+
+        if(!value.isPressed)
+        {
+            cam.position = camUncrouch.position;
+        }
     }
 }
