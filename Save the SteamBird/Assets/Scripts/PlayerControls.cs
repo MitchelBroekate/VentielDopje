@@ -17,6 +17,8 @@ public class PlayerControls : MonoBehaviour
     [SerializeField]
     float mouseSens;
     float xRotation = 0f;
+
+    bool crouchPressedB;
     #endregion
 
     /// <summary>
@@ -28,12 +30,13 @@ public class PlayerControls : MonoBehaviour
     }
 
     /// <summary>
-    /// The Update function updates the Walk and CameraMovement functions
+    /// The Update function updates the Walk, CrouchPressed and CameraMovement functions
     /// </summary>
     private void Update()
     {
         Walk();
         CameraMovement();
+        CrouchPressed();
     }  
 
     /// <summary>
@@ -70,16 +73,43 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    void OnCrouch(InputValue value)
+    /// <summary>
+    /// This function activates the crouch ability
+    /// </summary>
+    void CrouchPressed()
     {
-        if(value.isPressed)
+        if(crouchPressedB)
         {
-            cam.position = camCrouch.position;
+            cam.position = Vector3.Lerp(cam.position, camCrouch.position, 5 * Time.deltaTime);
         }
 
-        if(!value.isPressed)
+        if(!crouchPressedB)
         {
-            cam.position = camUncrouch.position;
+            cam.position = Vector3.Lerp(cam.position, camUncrouch.position, 5 * Time.deltaTime);
         }
+    }
+
+/// <summary>
+/// This Function toggles the camera position when the crouch button is pressed
+/// </summary>
+/// <param name="value"></param>
+    void OnCrouch(InputValue value)
+    {
+        if(cam.position != camCrouch.position)
+        {
+            if(value.isPressed)
+            {
+                crouchPressedB = true;
+            }
+        }
+
+        if(cam.position != camUncrouch.position)
+        {
+            if(!value.isPressed)
+            {
+                crouchPressedB = false;
+            }   
+        }
+
     }
 }
