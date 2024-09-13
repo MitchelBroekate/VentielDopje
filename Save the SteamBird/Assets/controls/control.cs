@@ -126,7 +126,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""00e60ff3-bb83-4792-84d1-110554c4c2b3"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
