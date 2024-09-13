@@ -3,33 +3,45 @@ using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
-    [SerializeField] bool holdingItem;
-    [SerializeField] GameObject item;
+    RaycastHit hit;
 
-    [SerializeField] Transform itemHoldLocation;
-    [SerializeField] RaycastHit hit;
+    public bool invetoryFull;
 
-    void OnInteract(InputValue value)
+    [SerializeField] LayerMask interactableLayer;
+
+    void Update()
     {
-        if(value.isPressed)
+        DoInteract();
+    }
+    void DoInteract()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            if(Physics.Raycast(transform.position, transform.forward, out hit, 20))
-            {
-                if(hit.collider.gameObject.tag == "INTERACTABLE")
-                {
-                    
-                }
+            Debug.Log("button pressed");
+            if(!Physics.Raycast(transform.position, transform.forward, out hit, 200, interactableLayer)) return;
+            
+            if(!hit.transform.TryGetComponent(out Interactable interactable)) return;
 
-                if(!holdingItem)
-                {
-                    if(hit.collider.gameObject.tag == "ITEM")
-                    {
-                        item = hit.collider.gameObject;
-                        item.transform.parent = transform;
-                        holdingItem = true;
-                    }
-                }
+            
+            if(hit.collider.gameObject.tag != "COG")
+            {
+                interactable.Interact();
             }
+            else
+            {
+                if(invetoryFull) return;
+
+                interactable.Interact();
+
+                invetoryFull = true;
+            }
+
+            
+
+
+
+
+            Debug.Log("Interact");
         }
     }
 }
