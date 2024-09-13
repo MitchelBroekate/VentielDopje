@@ -1,29 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
-    [SerializeField]
-    RaycastHit hit;
+    [SerializeField] bool holdingItem;
+    [SerializeField] GameObject item;
 
-    void Update()
-    {
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 20))
-        {
-            if(hit.collider.gameObject != null)
-            {
-                
-            }
-        }
-    }
+    [SerializeField] Transform itemHoldLocation;
+    [SerializeField] RaycastHit hit;
 
     void OnInteract(InputValue value)
     {
         if(value.isPressed)
         {
+            if(Physics.Raycast(transform.position, transform.forward, out hit, 20))
+            {
+                if(hit.collider.gameObject.tag == "INTERACTABLE")
+                {
+                    
+                }
 
+                if(!holdingItem)
+                {
+                    if(hit.collider.gameObject.tag == "ITEM")
+                    {
+                        item = hit.collider.gameObject;
+                        item.transform.parent = transform;
+                        holdingItem = true;
+                    }
+                }
+            }
         }
     }
 }
