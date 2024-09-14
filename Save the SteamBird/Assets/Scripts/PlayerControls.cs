@@ -4,12 +4,14 @@ using UnityEngine.InputSystem;
 public class PlayerControls : MonoBehaviour
 {
     #region WalkMovement Variables
+    [Header("WalkMovementVars")]
     Vector2 moveDirection;
     [SerializeField] float moveSpeed;
     Rigidbody rb;
     #endregion
 
     #region CamMovement Variables
+    [Header("CamMovementVars")]
     [SerializeField] Transform cam;
     [SerializeField] Transform camCrouch;
     [SerializeField] Transform camUncrouch;
@@ -18,7 +20,13 @@ public class PlayerControls : MonoBehaviour
     float mouseSens;
     float xRotation = 0f;
 
+    #endregion
+    
+    #region ExtraKey Variables
+    [Header("ExtraKeyVars")]
+    public Interaction interaction;
     bool crouchPressedB;
+    public bool invetoryFull;
     #endregion
 
     /// <summary>
@@ -112,6 +120,32 @@ public class PlayerControls : MonoBehaviour
             {
                 crouchPressedB = false;
             }   
+        }
+
+    }
+
+    /// <summary>
+    /// This function lets you drop an item if you are carrying one 
+    /// </summary>
+    /// <param name="value"></param>
+    void OnDropItem(InputValue value)
+    {
+        if(invetoryFull)
+        {
+            if(value.isPressed)
+            {
+                Transform cogChild = cam.GetChild(1).transform;
+
+                    if (cogChild.tag == "COG")
+                    {
+                        cogChild.parent = null;
+                        cogChild.GetComponent<Rigidbody>().isKinematic = false;
+                        cogChild.GetComponent<BoxCollider>().enabled = true;
+
+                        interaction.invetoryFull = false;                        
+                        invetoryFull = false;
+                    }
+            }
         }
 
     }
