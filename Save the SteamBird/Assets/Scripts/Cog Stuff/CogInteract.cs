@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CogInteract : MonoBehaviour
@@ -8,6 +6,8 @@ public class CogInteract : MonoBehaviour
     public GameObject cameraParent;
     public Transform cogCarryPos;
     public bool inObjective;
+
+    public bool cog1;
     #endregion
 
     /// <summary>

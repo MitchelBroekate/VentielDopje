@@ -6,6 +6,8 @@ public class Interaction : MonoBehaviour
     public PlayerControls playerControls;
     RaycastHit hit;
     public bool invetoryFull;
+
+    public int cogInInventory;
     GameObject Cog;
 
     [SerializeField] LayerMask interactableLayer;
@@ -26,10 +28,10 @@ public class Interaction : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(!Physics.Raycast(transform.position, transform.forward, out hit, 200, interactableLayer)) return;
+            if(!Physics.Raycast(transform.position, transform.forward, out hit, 2, interactableLayer)) return;
             
             if(!hit.transform.TryGetComponent(out Interactable interactable)) return;
-
+            Transform currentHit = hit.transform;
             
             if(hit.collider.gameObject.tag != "COG")
             {
@@ -42,6 +44,15 @@ public class Interaction : MonoBehaviour
                 if(invetoryFull) return;
 
                 interactable.Interact();
+
+                if(currentHit.GetComponent<CogInteract>().cog1)
+                {
+                    cogInInventory = 1;
+                }
+                else
+                {
+                    cogInInventory = 2;
+                }
 
                 invetoryFull = true;
                 playerControls.invetoryFull = true;
