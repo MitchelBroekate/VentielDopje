@@ -21,13 +21,6 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            CogRandomSpawn();
-        }
-    }
     void CogRandomSpawn()
     {
 

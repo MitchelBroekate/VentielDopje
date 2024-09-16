@@ -112,6 +112,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "VaultCam",
+            "id": "b3e4d0ad-e1aa-42e9-b7db-7df9af5cb7a9",
+            "actions": [
+                {
+                    "name": "VaultLockSelect",
+                    "type": "Button",
+                    "id": "6ac13865-52db-4e33-98da-4d481b2b5e92",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VaultLockForward",
+                    "type": "Button",
+                    "id": "c57a1ec0-cf1a-462a-a552-34972996f75b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VaultLockBack",
+                    "type": "Button",
+                    "id": "52b89b97-40de-4c08-9a29-6c742bcdc26e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4be23414-4797-4d7f-9290-f66a4d5a4c58",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VaultLockBack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81803803-36ac-4296-a35e-3e91822b953e",
+                    "path": "<Keyboard>/d",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VaultLockForward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1281f415-1cdb-45cd-ac57-624888e85b27",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VaultLockSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

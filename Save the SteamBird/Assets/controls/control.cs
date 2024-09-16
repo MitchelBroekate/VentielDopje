@@ -134,6 +134,74 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""VaultCam"",
+            ""id"": ""b3e4d0ad-e1aa-42e9-b7db-7df9af5cb7a9"",
+            ""actions"": [
+                {
+                    ""name"": ""VaultLockSelect"",
+                    ""type"": ""Button"",
+                    ""id"": ""6ac13865-52db-4e33-98da-4d481b2b5e92"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""VaultLockForward"",
+                    ""type"": ""Button"",
+                    ""id"": ""c57a1ec0-cf1a-462a-a552-34972996f75b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""VaultLockBack"",
+                    ""type"": ""Button"",
+                    ""id"": ""52b89b97-40de-4c08-9a29-6c742bcdc26e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4be23414-4797-4d7f-9290-f66a4d5a4c58"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VaultLockBack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81803803-36ac-4296-a35e-3e91822b953e"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VaultLockForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1281f415-1cdb-45cd-ac57-624888e85b27"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VaultLockSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -143,6 +211,11 @@ public partial class @Control: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_DropItem = m_Player.FindAction("DropItem", throwIfNotFound: true);
+        // VaultCam
+        m_VaultCam = asset.FindActionMap("VaultCam", throwIfNotFound: true);
+        m_VaultCam_VaultLockSelect = m_VaultCam.FindAction("VaultLockSelect", throwIfNotFound: true);
+        m_VaultCam_VaultLockForward = m_VaultCam.FindAction("VaultLockForward", throwIfNotFound: true);
+        m_VaultCam_VaultLockBack = m_VaultCam.FindAction("VaultLockBack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -262,10 +335,78 @@ public partial class @Control: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // VaultCam
+    private readonly InputActionMap m_VaultCam;
+    private List<IVaultCamActions> m_VaultCamActionsCallbackInterfaces = new List<IVaultCamActions>();
+    private readonly InputAction m_VaultCam_VaultLockSelect;
+    private readonly InputAction m_VaultCam_VaultLockForward;
+    private readonly InputAction m_VaultCam_VaultLockBack;
+    public struct VaultCamActions
+    {
+        private @Control m_Wrapper;
+        public VaultCamActions(@Control wrapper) { m_Wrapper = wrapper; }
+        public InputAction @VaultLockSelect => m_Wrapper.m_VaultCam_VaultLockSelect;
+        public InputAction @VaultLockForward => m_Wrapper.m_VaultCam_VaultLockForward;
+        public InputAction @VaultLockBack => m_Wrapper.m_VaultCam_VaultLockBack;
+        public InputActionMap Get() { return m_Wrapper.m_VaultCam; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(VaultCamActions set) { return set.Get(); }
+        public void AddCallbacks(IVaultCamActions instance)
+        {
+            if (instance == null || m_Wrapper.m_VaultCamActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_VaultCamActionsCallbackInterfaces.Add(instance);
+            @VaultLockSelect.started += instance.OnVaultLockSelect;
+            @VaultLockSelect.performed += instance.OnVaultLockSelect;
+            @VaultLockSelect.canceled += instance.OnVaultLockSelect;
+            @VaultLockForward.started += instance.OnVaultLockForward;
+            @VaultLockForward.performed += instance.OnVaultLockForward;
+            @VaultLockForward.canceled += instance.OnVaultLockForward;
+            @VaultLockBack.started += instance.OnVaultLockBack;
+            @VaultLockBack.performed += instance.OnVaultLockBack;
+            @VaultLockBack.canceled += instance.OnVaultLockBack;
+        }
+
+        private void UnregisterCallbacks(IVaultCamActions instance)
+        {
+            @VaultLockSelect.started -= instance.OnVaultLockSelect;
+            @VaultLockSelect.performed -= instance.OnVaultLockSelect;
+            @VaultLockSelect.canceled -= instance.OnVaultLockSelect;
+            @VaultLockForward.started -= instance.OnVaultLockForward;
+            @VaultLockForward.performed -= instance.OnVaultLockForward;
+            @VaultLockForward.canceled -= instance.OnVaultLockForward;
+            @VaultLockBack.started -= instance.OnVaultLockBack;
+            @VaultLockBack.performed -= instance.OnVaultLockBack;
+            @VaultLockBack.canceled -= instance.OnVaultLockBack;
+        }
+
+        public void RemoveCallbacks(IVaultCamActions instance)
+        {
+            if (m_Wrapper.m_VaultCamActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IVaultCamActions instance)
+        {
+            foreach (var item in m_Wrapper.m_VaultCamActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_VaultCamActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public VaultCamActions @VaultCam => new VaultCamActions(this);
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnDropItem(InputAction.CallbackContext context);
+    }
+    public interface IVaultCamActions
+    {
+        void OnVaultLockSelect(InputAction.CallbackContext context);
+        void OnVaultLockForward(InputAction.CallbackContext context);
+        void OnVaultLockBack(InputAction.CallbackContext context);
     }
 }
