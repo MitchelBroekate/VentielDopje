@@ -45,7 +45,7 @@ public class VaultLockPuzzle : MonoBehaviour
     {
         if(context.performed)
         {
-            transform.Rotate(0, 0, -36);
+            transform.Rotate(0, 0, 36);
 
             if(currentCodePiece >0)
             {
@@ -62,7 +62,7 @@ public class VaultLockPuzzle : MonoBehaviour
     {
         if(context.performed)
         {
-            transform.Rotate(0, 0, 36);
+            transform.Rotate(0, 0, -36);
 
             if(currentCodePiece < 10)
             {
@@ -106,8 +106,6 @@ public class VaultLockPuzzle : MonoBehaviour
 
     public void SwtichCamsInteraction()
     {
-        Debug.Log("nowork");
-
         camSwitch = true;
     }
 
