@@ -64,7 +64,7 @@ public class VaultLockPuzzle : MonoBehaviour
         {
             transform.Rotate(0, 0, -36);
 
-            if(currentCodePiece < 10)
+            if(currentCodePiece < 9)
             {
                 currentCodePiece++;
             }
