@@ -118,15 +118,6 @@
             "id": "b3e4d0ad-e1aa-42e9-b7db-7df9af5cb7a9",
             "actions": [
                 {
-                    "name": "VaultLockSelect",
-                    "type": "Button",
-                    "id": "6ac13865-52db-4e33-98da-4d481b2b5e92",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "VaultLockForward",
                     "type": "Button",
                     "id": "c57a1ec0-cf1a-462a-a552-34972996f75b",
@@ -165,17 +156,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "VaultLockForward",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1281f415-1cdb-45cd-ac57-624888e85b27",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "VaultLockSelect",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

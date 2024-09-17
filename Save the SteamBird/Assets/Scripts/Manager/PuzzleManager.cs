@@ -43,4 +43,8 @@ public class PuzzleManager : MonoBehaviour
         cogSpawnpoint.Add(currentCog1Spawn);
     }
 
+    public void VaultPuzzleComplete()
+    {
+        Debug.Log("Completed the puzzle");
+    }
 }

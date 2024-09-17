@@ -36,8 +36,6 @@ public class Interaction : MonoBehaviour
             if(hit.collider.gameObject.tag != "COG")
             {
                 interactable.Interact();
-
-                Debug.Log("Interact");
             }
             else
             {
@@ -56,8 +54,6 @@ public class Interaction : MonoBehaviour
 
                 invetoryFull = true;
                 playerControls.invetoryFull = true;
-
-                Debug.Log("Carrying Cog");
             }
         }
     }
