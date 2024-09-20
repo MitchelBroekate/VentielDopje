@@ -17,7 +17,7 @@ public class PuzzleManager : MonoBehaviour
     {
         if(cog1.GetComponent<CogInteract>().inObjective && cog2.GetComponent<CogInteract>().inObjective)
         {
-            //Start unlocking puzzle piece
+            Debug.Log($"<color=#ff0015>Completed the Cog puzzle!</color>");
         }
     }
 
@@ -45,6 +45,11 @@ public class PuzzleManager : MonoBehaviour
 
     public void VaultPuzzleComplete()
     {
-        Debug.Log("Completed the puzzle");
+        Debug.Log($"<color=#0092ff>Completed the Vault puzzle!</color>");
+    }
+
+    public void PipePuzzleComplete()
+    {
+        Debug.Log($"<color=#0cff00>Completed the Pipe puzzle!</color>");
     }
 }

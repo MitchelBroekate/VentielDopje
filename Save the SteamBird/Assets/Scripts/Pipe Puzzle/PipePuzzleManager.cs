@@ -1,43 +1,76 @@
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PipePuzzleManager : MonoBehaviour
 {
-    public List<Transform> transforms = new List<Transform>();
+
+    public PuzzleManager puzzleManager;
+    public Transform airVent1, airVent2, airVent3, airVent4, airVent5;
+
+    public int currentAirvent;
+    public int FixableAirvent;
 
     void Start()
     {
-        List<int> uniqueNumbers = new List<int> { 0, 1, 2, 3, 4 };
-
-        ShuffleList(uniqueNumbers);
-
-        for (int i = 0; i < transforms.Count; i++)
-        {
-            Debug.Log($"Transform {transforms[i].name} gets random number {uniqueNumbers[i]}");
-        }
-    }
-
-    // Helper method to shuffle the list
-    void ShuffleList(List<int> list)
-    {
-        for (int i = 0; i < list.Count; i++)
-        {
-            int randomIndex = Random.Range(i, list.Count);
-            int temp = list[i];
-            list[i] = list[randomIndex];
-            list[randomIndex] = temp;
-        }
+        RandomPipeSelector();
     }
 
     public void RandomPipeSelector()
     {
+        if(FixableAirvent > 4)
+        {
+            PuzzleCompleted();
+        }
+        else
+        {
+            FixableAirvent++;
 
+            currentAirvent = UnityEngine.Random.Range(0, 4);
+
+            airVent1.GetChild(0).gameObject.SetActive(false);
+            airVent2.GetChild(0).gameObject.SetActive(false);
+            airVent3.GetChild(0).gameObject.SetActive(false);
+            airVent4.GetChild(0).gameObject.SetActive(false);
+            airVent5.GetChild(0).gameObject.SetActive(false);
+
+            switch(currentAirvent)
+            {
+                case 0:
+                airVent1.GetChild(0).gameObject.SetActive(true);
+                break;
+
+                case 1:
+                airVent2.GetChild(0).gameObject.SetActive(true);
+                break;
+
+                case 2:
+                airVent3.GetChild(0).gameObject.SetActive(true);
+                break;
+
+                case 3:
+                airVent4.GetChild(0).gameObject.SetActive(true);
+                break;
+
+                case 4:
+                airVent5.GetChild(0).gameObject.SetActive(true);
+                break;
+            }
+        }
     }
-
+    
     public void PipePuzzleReset()
     {
+        Debug.LogWarning("Puzzle Reset");
 
+        FixableAirvent = 0;
 
         RandomPipeSelector();
+    }
+
+     void PuzzleCompleted()
+    {
+        puzzleManager.PipePuzzleComplete();
     }
 }

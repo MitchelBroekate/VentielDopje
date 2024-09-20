@@ -77,31 +77,35 @@ public class VaultLockPuzzle : MonoBehaviour
 
     void VaultLockSelect()
     {
-        if(Input.GetMouseButtonDown(1))
+        if(vaultCam.activeInHierarchy == true)
         {
-
-            if(code4 == null && code3 != null)
+            if(Input.GetMouseButtonDown(1))
             {
-                code4 = currentCodePiece.ToString();
 
-                ClockTime();
-            }
+                if(code4 == null && code3 != null)
+                {
+                    code4 = currentCodePiece.ToString();
 
-            if(code3 == null && code2 != null) 
-            {
-                code3 = currentCodePiece.ToString();
-            }
+                    ClockTime();
+                }
 
-            if(code2 == null && code1 != null)
-            {
-                code2 = currentCodePiece.ToString();
-            }
+                if(code3 == null && code2 != null) 
+                {
+                    code3 = currentCodePiece.ToString();
+                }
 
-            if(code1 == null)
-            {
-                code1 = currentCodePiece.ToString();
+                if(code2 == null && code1 != null)
+                {
+                    code2 = currentCodePiece.ToString();
+                }
+
+                if(code1 == null)
+                {
+                    code1 = currentCodePiece.ToString();
+                }
             }
         }
+        
     }
 
     public void SwtichCamsInteraction()
