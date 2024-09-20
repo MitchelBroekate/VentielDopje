@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PipePuzzleManager : MonoBehaviour
@@ -26,7 +23,6 @@ public class PipePuzzleManager : MonoBehaviour
         else
         {
             FixableAirvent++;
-
             currentAirvent = UnityEngine.Random.Range(0, 4);
 
             airVent1.GetChild(0).gameObject.SetActive(false);
@@ -59,7 +55,7 @@ public class PipePuzzleManager : MonoBehaviour
             }
         }
     }
-    
+
     public void PipePuzzleReset()
     {
         Debug.LogWarning("Puzzle Reset");
@@ -70,7 +66,13 @@ public class PipePuzzleManager : MonoBehaviour
     }
 
      void PuzzleCompleted()
-    {
+    {   
+        airVent1.GetChild(0).gameObject.SetActive(false);
+        airVent2.GetChild(0).gameObject.SetActive(false);
+        airVent3.GetChild(0).gameObject.SetActive(false);
+        airVent4.GetChild(0).gameObject.SetActive(false);
+        airVent5.GetChild(0).gameObject.SetActive(false);
+
         puzzleManager.PipePuzzleComplete();
     }
 }
