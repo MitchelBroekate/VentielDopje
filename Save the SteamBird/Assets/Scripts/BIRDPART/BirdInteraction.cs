@@ -9,7 +9,7 @@ public class BirdInteraction : MonoBehaviour
     public Transform birdPartCarryPos;
     public bool inObjective;
 
-    public bool cog1;
+    public int birdPart;
     #endregion
 
     /// <summary>
