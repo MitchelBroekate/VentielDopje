@@ -11,6 +11,7 @@ public class PipeInteractable : MonoBehaviour
 
         if(valveInt == pipePuzzleManager.currentAirvent)
         {
+            pipePuzzleManager.lastPipe = valveInt;
             pipePuzzleManager.RandomPipeSelector();
         }
         else

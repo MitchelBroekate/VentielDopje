@@ -134,13 +134,13 @@ public class PlayerControls : MonoBehaviour
         {
             if(value.isPressed)
             {
-                Transform cogChild = cam.GetChild(1).transform;
+                Transform pickUpChild = cam.GetChild(1).transform;
 
-                    if (cogChild.tag == "COG")
+                    if (pickUpChild.tag == "COG" || pickUpChild.tag == "BIRDPART")
                     {
-                        cogChild.parent = null;
-                        cogChild.GetComponent<Rigidbody>().isKinematic = false;
-                        cogChild.GetComponent<BoxCollider>().enabled = true;
+                        pickUpChild.parent = null;
+                        pickUpChild.GetComponent<Rigidbody>().isKinematic = false;
+                        pickUpChild.GetComponent<BoxCollider>().enabled = true;
 
                         interaction.invetoryFull = false;                        
                         invetoryFull = false;

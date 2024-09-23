@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Steambirds
   productName: Steal the SteamBird
-  defaultCursor: {fileID: 2800000, guid: 27ea246c88095864499e4d12e970a877, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.6462264, g: 0.9577584, b: 1, a: 1}
   m_ShowUnitySplashScreen: 1

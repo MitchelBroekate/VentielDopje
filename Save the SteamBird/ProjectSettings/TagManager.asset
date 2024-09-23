@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - COG
+  - BIRDPART
   layers:
   - Default
   - TransparentFX

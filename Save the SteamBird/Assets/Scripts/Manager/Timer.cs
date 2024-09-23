@@ -6,21 +6,37 @@ public class Timer : MonoBehaviour
 
     float timerTime = 600;
     [SerializeField] TMP_Text time;
+    public bool timeIsRunning = true;
+    bool activateLose = true;
 
+    /// <summary>
+    /// This function keeps time running for the timer
+    /// </summary>
     void Update()
     {
-        if(timerTime > 0)
+        if(timeIsRunning)
         {
-            timerTime -= Time.deltaTime;
-        }
-        else
-        {
-            timerTime = 600;
-        }
+            if(timerTime > 0)
+            {
+                timerTime -= Time.deltaTime;
+            }
+            else
+            {
+                if(activateLose)
+                {
+                    //lose
+                    activateLose = false;
+                }
+            }
 
-        DisplayTime(timerTime);
+            DisplayTime(timerTime);
+        }
     }
 
+    /// <summary>
+    /// This function formats and displays the time
+    /// </summary>
+    /// <param name="timeToDisplay"></param>
     void DisplayTime(float timeToDisplay)
     {
         if(timeToDisplay < 0)

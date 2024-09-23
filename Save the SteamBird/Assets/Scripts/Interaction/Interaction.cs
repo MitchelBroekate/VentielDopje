@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Interaction : MonoBehaviour
@@ -8,7 +9,7 @@ public class Interaction : MonoBehaviour
     public bool invetoryFull;
 
     public int cogInInventory;
-    GameObject Cog;
+    public int birdPartInInventory;
 
     [SerializeField] LayerMask interactableLayer;
     #endregion
@@ -33,12 +34,9 @@ public class Interaction : MonoBehaviour
             if(!hit.transform.TryGetComponent(out Interactable interactable)) return;
             Transform currentHit = hit.transform;
             
-            if(hit.collider.gameObject.tag != "COG")
+            if(hit.collider.gameObject.tag == "COG")
             {
-                interactable.Interact();
-            }
-            else
-            {
+
                 if(invetoryFull) return;
 
                 interactable.Interact();
@@ -54,6 +52,34 @@ public class Interaction : MonoBehaviour
 
                 invetoryFull = true;
                 playerControls.invetoryFull = true;
+            }
+            
+            else if(hit.collider.gameObject.tag == "BIRDPART")
+            {
+                if(invetoryFull) return;
+
+                interactable.Interact();
+
+                if(currentHit.GetComponent<BirdInteraction>().birdPart == 1)
+                {
+                    birdPartInInventory = 1;
+                }
+                else if(currentHit.GetComponent<BirdInteraction>().birdPart == 2)
+                {
+                    birdPartInInventory = 2;
+                }
+                else if(currentHit.GetComponent<BirdInteraction>().birdPart == 3)
+                {
+                    birdPartInInventory = 3;
+                }
+
+                invetoryFull = true;
+                playerControls.invetoryFull = true;
+            }
+
+            else
+            {
+                interactable.Interact();
             }
         }
     }

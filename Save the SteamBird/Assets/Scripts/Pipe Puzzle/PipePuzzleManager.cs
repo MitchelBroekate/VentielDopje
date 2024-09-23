@@ -9,6 +9,8 @@ public class PipePuzzleManager : MonoBehaviour
     public int currentAirvent;
     public int FixableAirvent;
 
+    public int lastPipe = 10;
+
     void Start()
     {
         RandomPipeSelector();
@@ -25,34 +27,45 @@ public class PipePuzzleManager : MonoBehaviour
             FixableAirvent++;
             currentAirvent = UnityEngine.Random.Range(0, 4);
 
-            airVent1.GetChild(0).gameObject.SetActive(false);
-            airVent2.GetChild(0).gameObject.SetActive(false);
-            airVent3.GetChild(0).gameObject.SetActive(false);
-            airVent4.GetChild(0).gameObject.SetActive(false);
-            airVent5.GetChild(0).gameObject.SetActive(false);
-
-            switch(currentAirvent)
+            if(currentAirvent == lastPipe)
             {
-                case 0:
-                airVent1.GetChild(0).gameObject.SetActive(true);
-                break;
-
-                case 1:
-                airVent2.GetChild(0).gameObject.SetActive(true);
-                break;
-
-                case 2:
-                airVent3.GetChild(0).gameObject.SetActive(true);
-                break;
-
-                case 3:
-                airVent4.GetChild(0).gameObject.SetActive(true);
-                break;
-
-                case 4:
-                airVent5.GetChild(0).gameObject.SetActive(true);
-                break;
+                RandomPipeSelector();
+                FixableAirvent--;
+                return;
             }
+            else
+            {
+                airVent1.GetChild(0).gameObject.SetActive(false);
+                airVent2.GetChild(0).gameObject.SetActive(false);
+                airVent3.GetChild(0).gameObject.SetActive(false);
+                airVent4.GetChild(0).gameObject.SetActive(false);
+                airVent5.GetChild(0).gameObject.SetActive(false);
+
+                switch(currentAirvent)
+                {
+                    case 0:
+                    airVent1.GetChild(0).gameObject.SetActive(true);
+                    break;
+
+                    case 1:
+                    airVent2.GetChild(0).gameObject.SetActive(true);
+                    break;
+
+                    case 2:
+                    airVent3.GetChild(0).gameObject.SetActive(true);
+                    break;
+
+                    case 3:
+                    airVent4.GetChild(0).gameObject.SetActive(true);
+                    break;
+
+                    case 4:
+                    airVent5.GetChild(0).gameObject.SetActive(true);
+                    break;
+                }
+            }
+
+           
         }
     }
 
