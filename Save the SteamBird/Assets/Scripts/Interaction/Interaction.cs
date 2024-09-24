@@ -11,6 +11,9 @@ public class Interaction : MonoBehaviour
     public int cogInInventory;
     public int birdPartInInventory;
 
+    public GameObject interactTXT;
+    public GameObject dropTXT;
+
     [SerializeField] LayerMask interactableLayer;
     #endregion
 
@@ -27,60 +30,88 @@ public class Interaction : MonoBehaviour
     /// </summary>
     void DoInteract()
     {
-        if (Input.GetMouseButtonDown(0))
+
+
+        if(invetoryFull)
         {
-            if(!Physics.Raycast(transform.position, transform.forward, out hit, 2, interactableLayer)) return;
-            
-            if(!hit.transform.TryGetComponent(out Interactable interactable)) return;
-            Transform currentHit = hit.transform;
-            
-            if(hit.collider.gameObject.tag == "COG")
+            dropTXT.SetActive(true);
+        }
+        else
+        {
+            dropTXT.SetActive(false);
+        }
+
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 2, interactableLayer))
+        {
+            if(hit.transform.gameObject.tag != "COGPUZZLE")
             {
+                interactTXT.SetActive(true);
+            }
+            else if(hit.transform.gameObject.tag == "COGPUZZLE" && invetoryFull)
+            {
+                interactTXT.SetActive(true);
+            }
 
-                if(invetoryFull) return;
+            if(!hit.transform.TryGetComponent(out Interactable interactable)) return;
 
-                interactable.Interact();
-
-                if(currentHit.GetComponent<CogInteract>().cog1)
+            if (Input.GetMouseButtonDown(0))
+            {
+                
+                Transform currentHit = hit.transform;
+                
+                if(hit.collider.gameObject.tag == "COG")
                 {
-                    cogInInventory = 1;
+
+                    if(invetoryFull) return;
+
+                    interactable.Interact();
+
+                    if(currentHit.GetComponent<CogInteract>().cog1)
+                    {
+                        cogInInventory = 1;
+                    }
+                    else
+                    {
+                        cogInInventory = 2;
+                    }
+
+                    invetoryFull = true;
+                    playerControls.invetoryFull = true;
                 }
+                
+                else if(hit.collider.gameObject.tag == "BIRDPART")
+                {
+                    if(invetoryFull) return;
+
+                    interactable.Interact();
+
+                    if(currentHit.GetComponent<BirdInteraction>().birdPart == 1)
+                    {
+                        birdPartInInventory = 1;
+                    }
+                    else if(currentHit.GetComponent<BirdInteraction>().birdPart == 2)
+                    {
+                        birdPartInInventory = 2;
+                    }
+                    else if(currentHit.GetComponent<BirdInteraction>().birdPart == 3)
+                    {
+                        birdPartInInventory = 3;
+                    }
+
+                    invetoryFull = true;
+                    playerControls.invetoryFull = true;
+                }
+
                 else
                 {
-                    cogInInventory = 2;
+                    interactable.Interact();
                 }
-
-                invetoryFull = true;
-                playerControls.invetoryFull = true;
             }
-            
-            else if(hit.collider.gameObject.tag == "BIRDPART")
-            {
-                if(invetoryFull) return;
-
-                interactable.Interact();
-
-                if(currentHit.GetComponent<BirdInteraction>().birdPart == 1)
-                {
-                    birdPartInInventory = 1;
-                }
-                else if(currentHit.GetComponent<BirdInteraction>().birdPart == 2)
-                {
-                    birdPartInInventory = 2;
-                }
-                else if(currentHit.GetComponent<BirdInteraction>().birdPart == 3)
-                {
-                    birdPartInInventory = 3;
-                }
-
-                invetoryFull = true;
-                playerControls.invetoryFull = true;
-            }
-
-            else
-            {
-                interactable.Interact();
-            }
+        }
+        else
+        {
+            interactTXT.SetActive(false);
+            return;
         }
     }
 }

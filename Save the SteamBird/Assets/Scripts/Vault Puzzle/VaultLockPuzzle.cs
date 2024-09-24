@@ -23,6 +23,8 @@ public class VaultLockPuzzle : MonoBehaviour
 
     public PuzzleManager puzzleManager;
 
+    public GameObject vaultKeys;
+
     bool camSwitch;
     bool allowCamSwitch = true;
 
@@ -35,6 +37,8 @@ public class VaultLockPuzzle : MonoBehaviour
         {
             vaultCam.SetActive(true);
             player.SetActive(false);
+
+            vaultKeys.SetActive(true);
 
             allowCamSwitch = false;
             camSwitch = false;
@@ -121,6 +125,8 @@ public class VaultLockPuzzle : MonoBehaviour
             {
                 vaultCam.SetActive(false);
                 player.SetActive(true);
+
+                vaultKeys.SetActive(false);
 
                 allowCamSwitch = true;
             }

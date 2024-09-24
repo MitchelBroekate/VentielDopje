@@ -345,6 +345,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd7ac155909f074b83e95eabf38411e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &471772715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6714841220484862510, guid: 3252fa70ff59bbf4caafa4329a0622d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 150665666378790228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &480295133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8218022769875614245, guid: cbaaf802781cc1545b6f8ae50ea18837,
@@ -1231,6 +1237,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3290461180413991848, guid: f584d92248828ef409c5211ffbf4b8fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419704729499686331, guid: f584d92248828ef409c5211ffbf4b8fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5349299508210771582, guid: f584d92248828ef409c5211ffbf4b8fa,
         type: 3}
       propertyPath: pipePuzzleManager
@@ -1246,11 +1262,21 @@ PrefabInstance:
       propertyPath: pipePuzzleManager
       value: 
       objectReference: {fileID: 1703262049}
+    - target: {fileID: 6277349492748209233, guid: f584d92248828ef409c5211ffbf4b8fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6712198399206227918, guid: f584d92248828ef409c5211ffbf4b8fa,
         type: 3}
       propertyPath: pipePuzzleManager
       value: 
       objectReference: {fileID: 1703262049}
+    - target: {fileID: 6895356786425979329, guid: f584d92248828ef409c5211ffbf4b8fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7604248238599089245, guid: f584d92248828ef409c5211ffbf4b8fa,
         type: 3}
       propertyPath: pipePuzzleManager
@@ -1260,6 +1286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BottemPipes
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735673236492889511, guid: f584d92248828ef409c5211ffbf4b8fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1357,6 +1388,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2278057431376956211, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_TagString
+      value: COGPUZZLE
+      objectReference: {fileID: 0}
     - target: {fileID: 2367105374423129793, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: cog1Object
@@ -1387,6 +1423,16 @@ PrefabInstance:
       propertyPath: interaction
       value: 
       objectReference: {fileID: 368145569}
+    - target: {fileID: 4744568224189226548, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_TagString
+      value: COGPUZZLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566910182658368828, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6951986875952832845, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1447,6 +1493,11 @@ PrefabInstance:
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1703262047}
+    - target: {fileID: 7790461306746266184, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7809114406513254171, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: m_Name
@@ -1481,6 +1532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'vault '
+      objectReference: {fileID: 0}
+    - target: {fileID: 887999007271248062, guid: 1cdd94c2ec6e53e46a77f62f9825ff30,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5755428407430397782, guid: 1cdd94c2ec6e53e46a77f62f9825ff30,
         type: 3}
@@ -1547,6 +1603,11 @@ PrefabInstance:
       propertyPath: vaultCam
       value: 
       objectReference: {fileID: 860423531}
+    - target: {fileID: 8642930039994288922, guid: 1cdd94c2ec6e53e46a77f62f9825ff30,
+        type: 3}
+      propertyPath: vaultKeys
+      value: 
+      objectReference: {fileID: 471772715}
     - target: {fileID: 8642930039994288922, guid: 1cdd94c2ec6e53e46a77f62f9825ff30,
         type: 3}
       propertyPath: setClockTime
@@ -1913,10 +1974,20 @@ PrefabInstance:
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1703262047}
+    - target: {fileID: 4911040904292121321, guid: 7f8076c29476faf4a97ee4fb5714da4c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5792828741089016119, guid: 7f8076c29476faf4a97ee4fb5714da4c,
         type: 3}
       propertyPath: m_Name
       value: BirdEndoSkeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792828741089016119, guid: 7f8076c29476faf4a97ee4fb5714da4c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6455410942826480540, guid: 7f8076c29476faf4a97ee4fb5714da4c,
         type: 3}

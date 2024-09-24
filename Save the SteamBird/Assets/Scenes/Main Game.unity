@@ -11389,6 +11389,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2107524655197048918, guid: 3252fa70ff59bbf4caafa4329a0622d1,
+        type: 3}
+      propertyPath: m_text
+      value: Vault Keybinds
+      objectReference: {fileID: 0}
     - target: {fileID: 6972819519691393067, guid: 3252fa70ff59bbf4caafa4329a0622d1,
         type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11414,6 +11419,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3252fa70ff59bbf4caafa4329a0622d1, type: 3}
+--- !u!1 &1074851564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6714841220484862510, guid: 3252fa70ff59bbf4caafa4329a0622d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1074851563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1090383047
 GameObject:
   m_ObjectHideFlags: 0
@@ -21082,6 +21093,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1768206106}
     m_Modifications:
+    - target: {fileID: 2278057431376956211, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_TagString
+      value: COGPUZZLE
+      objectReference: {fileID: 0}
     - target: {fileID: 2367105374423129793, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: cog1
@@ -21122,6 +21138,16 @@ PrefabInstance:
       propertyPath: interaction
       value: 
       objectReference: {fileID: 908641007}
+    - target: {fileID: 4744568224189226548, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_TagString
+      value: COGPUZZLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566910182658368828, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6951986875952832845, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.size
@@ -21211,6 +21237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PuzzleManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790461306746266184, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809114406513254171, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
@@ -21686,6 +21717,11 @@ PrefabInstance:
       propertyPath: vaultCam
       value: 
       objectReference: {fileID: 965519933}
+    - target: {fileID: 8642930039994288922, guid: 1cdd94c2ec6e53e46a77f62f9825ff30,
+        type: 3}
+      propertyPath: vaultKeys
+      value: 
+      objectReference: {fileID: 1074851564}
     - target: {fileID: 8642930039994288922, guid: 1cdd94c2ec6e53e46a77f62f9825ff30,
         type: 3}
       propertyPath: setClockTime
