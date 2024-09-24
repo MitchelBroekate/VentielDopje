@@ -27,6 +27,8 @@ public class PlayerControls : MonoBehaviour
     public Interaction interaction;
     bool crouchPressedB;
     public bool invetoryFull;
+
+    public bool winMovement;
     #endregion
 
     /// <summary>
@@ -37,7 +39,6 @@ public class PlayerControls : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
     }
 
     /// <summary>
@@ -45,9 +46,12 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        Walk();
-        CameraMovement();
-        CrouchPressed();
+        if(!winMovement)
+        {
+            Walk();
+            CameraMovement();
+            CrouchPressed();
+        }
     }  
 
     /// <summary>

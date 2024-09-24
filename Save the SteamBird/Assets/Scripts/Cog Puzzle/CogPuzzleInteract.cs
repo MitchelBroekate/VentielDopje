@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class CogPuzzleInteract : MonoBehaviour
 {
+    #region CogVars
+    [Header("CogVars")]
     public bool cog1;
-
     public Interaction interaction;
     public GameObject cog1Object;
     public GameObject cog2Object;
+    #endregion
 
-
+    /// <summary>
+    /// This function allows the player to insert a Cog into the CogPuzzle
+    /// </summary>
     public void CogInsertion()
     {
         if(cog1)

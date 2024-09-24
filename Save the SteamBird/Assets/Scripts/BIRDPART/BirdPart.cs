@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class BirdPart : MonoBehaviour
 {
+    #region Scripts
     [Header("Scripts")]
     public Interaction interaction;
     public PuzzleManager puzzleManager;
+    #endregion
 
+    #region BirdParts
     [Header("BirdParts")]
     public GameObject bird1Object;
     public GameObject bird2Object;
     public GameObject bird3Object;
+    #endregion
 
-    [Header("BirdObjectiveLocation")]
+    #region BirdObjective
+    [Header("BirdObjective")]
     public GameObject birdObjective1;
     public GameObject birdObjective2;
     public GameObject birdObjective3;
@@ -23,8 +28,11 @@ public class BirdPart : MonoBehaviour
     bool part3InObjective;
 
     int birdPartsPlaced = 0;
+    #endregion
 
-
+    /// <summary>
+    /// This function allows the player to insert a Birdpart into the bird and checks for when all the parts are inserted
+    /// </summary>
     public void BirdPartInsertion()
     {
         if(interaction.invetoryFull)
@@ -67,16 +75,12 @@ public class BirdPart : MonoBehaviour
                 interaction.invetoryFull = false;
                 interaction.birdPartInInventory = 0;
             }
-            
         }
-
-        if(bird1Object.GetComponent<BirdInteraction>().inObjective)
-        {
-            
-        }
-
     }
 
+    /// <summary>
+    /// This function checks the win condition and activates the win screen
+    /// </summary>
     void EndGame()
     {
         birdPartsPlaced++;

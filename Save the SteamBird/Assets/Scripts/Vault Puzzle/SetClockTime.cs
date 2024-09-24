@@ -3,16 +3,23 @@ using TMPro;
 
 public class SetClockTime : MonoBehaviour
 {
+    #region Vars
     public TMP_Text timeText;
     int timeToDisplay;
-
     public string timeCode;
+    #endregion
 
+    /// <summary>
+    /// Starts the timer
+    /// </summary>
     void Start()
     {
         SetTime();   
     }
 
+    /// <summary>
+    /// Sets the time and decreases it in real time
+    /// </summary>
     void SetTime()
     {
         if(timeToDisplay < 0)

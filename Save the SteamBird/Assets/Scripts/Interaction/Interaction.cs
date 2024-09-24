@@ -22,7 +22,11 @@ public class Interaction : MonoBehaviour
     /// </summary>
     void Update()
     {
-        DoInteract();
+        if(!playerControls.winMovement)
+        {
+            DoInteract();
+        }
+        
     }
 
     /// <summary>

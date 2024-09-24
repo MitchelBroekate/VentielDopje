@@ -5,10 +5,14 @@ using UnityEngine.InputSystem;
 
 public class VaultLockPuzzle : MonoBehaviour
 {
-
+    #region PlayerCams
+    [Header("PlayerCams")]
     public GameObject player;
     public GameObject vaultCam;
+    #endregion
 
+    #region ClockCode
+    [Header("ClockCode")]
     public SetClockTime setClockTime;
 
     int currentCodePiece = 0;
@@ -20,14 +24,27 @@ public class VaultLockPuzzle : MonoBehaviour
     string code2 = null;
     string code3 = null;
     string code4 = null;
+    #endregion
 
-    public PuzzleManager puzzleManager;
-
-    public GameObject vaultKeys;
-
+    #region CamSwitch
+    [Header("CamSwitch")]
     bool camSwitch;
     bool allowCamSwitch = true;
+    #endregion
 
+    #region Script
+    [Header("Script")]
+    public PuzzleManager puzzleManager;
+    #endregion
+
+    #region VaultKeybind
+    [Header("VaultKeybind")]
+    public GameObject vaultKeys;
+    #endregion
+
+    /// <summary>
+    /// This function updates the cam switcher, check if you can switch cams and updates the vault code selector
+    /// </summary>
     void Update()
     {
         SwitchCamsVault();
@@ -45,6 +62,10 @@ public class VaultLockPuzzle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This function rotates the vault knob back and enters it's code
+    /// </summary>
+    /// <param name="context"></param>
     public void VaultLockBack(InputAction.CallbackContext context)
     {
         if(context.performed)
@@ -62,6 +83,10 @@ public class VaultLockPuzzle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This function rotates the vault knob forward and enters it's code
+    /// </summary>
+    /// <param name="context"></param>
     public void VaultLockForward(InputAction.CallbackContext context)
     {
         if(context.performed)
@@ -79,6 +104,9 @@ public class VaultLockPuzzle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This function locks in the current selected codepiece
+    /// </summary>
     void VaultLockSelect()
     {
         if(vaultCam.activeInHierarchy == true)
@@ -112,11 +140,17 @@ public class VaultLockPuzzle : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// This function allows the player to switch back into the vault when exited
+    /// </summary>
     public void SwtichCamsInteraction()
     {
         camSwitch = true;
     }
 
+    /// <summary>
+    /// This function allows the player to switch cameras out of the vault
+    /// </summary>
     void SwitchCamsVault()
     {
         if(Input.GetMouseButtonDown(0))
@@ -133,6 +167,9 @@ public class VaultLockPuzzle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This function checks the code with the time code and resets it if its wrong
+    /// </summary>
     void ClockTime()
     {
         timeCode = setClockTime.timeCode;

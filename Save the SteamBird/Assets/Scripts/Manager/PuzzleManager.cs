@@ -5,20 +5,30 @@ using UnityEngine;
 public class PuzzleManager : MonoBehaviour
 {
     #region Cog Vars
-    [SerializeField] Transform cog1, cog2;
+    [Header("CogVars")]
+    [SerializeField] Transform cog1;
+    [SerializeField] Transform cog2;
     [SerializeField] Transform cogSpawnParent;
 
     [SerializeField] List<Transform> cogSpawnpoint = new List<Transform>();
     #endregion
 
     #region BirdParts Vars
+    [Header("BirdPartVars")]
     [SerializeField] Timer timer;
     [SerializeField] Transform bird1, bird2, bird3;
     [SerializeField] Transform birdspawn1, birdspawn2, birdspawn3;
     #endregion
 
-    public GameObject winCanvas;
-    
+    #region Player
+    [Header("PlayerVars")]
+    [SerializeField] PlayerControls playerControls;
+    [SerializeField] Transform player;
+    [SerializeField] GameObject playerCanvas;
+    #endregion
+
+    [Header("WinCanvas")]
+    [SerializeField] GameObject winCanvas;
 
     /// <summary>
     /// This function activates the CogRandomSpawn at the start of the game
@@ -94,6 +104,10 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log($"<color=#8d28ed>You Beat The Game!!!</color>");
 
         timer.timeIsRunning = false;
+        Cursor.lockState = CursorLockMode.None;
+        playerControls.winMovement = true;
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        playerCanvas.SetActive(false);
         winCanvas.SetActive(true);
     }
 }

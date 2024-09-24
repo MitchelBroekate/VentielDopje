@@ -3,12 +3,25 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-
-    float timerTime = 600;
+    #region TimerVars
+    [Header("TimeVars")]
+    [SerializeField] float timerTime = 600;
     [SerializeField] TMP_Text time;
     public bool timeIsRunning = true;
+    #endregion
+
+    #region LoseVars
+    [Header(header: "LoseVars")]
     bool activateLose = true;
     public GameObject loseCanvas; 
+    #endregion
+
+    #region PlayerVars
+    [Header("PlayerVars")]
+    [SerializeField] PlayerControls playerControls;
+    [SerializeField] Transform player;
+    [SerializeField] GameObject playerCanvas;
+    #endregion
 
     /// <summary>
     /// This function keeps time running for the timer
@@ -27,6 +40,11 @@ public class Timer : MonoBehaviour
                 {
                     loseCanvas.SetActive(true);
                     activateLose = false;
+                    timeIsRunning = false;
+                    Cursor.lockState = CursorLockMode.None;
+                    playerControls.winMovement = true;
+                    player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    playerCanvas.SetActive(false);
                 }
             }
 
