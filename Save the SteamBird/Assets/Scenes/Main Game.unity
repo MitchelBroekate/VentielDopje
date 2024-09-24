@@ -6099,6 +6099,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b544f59749678947b7c88974246090d, type: 3}
+--- !u!1 &800638976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 248276813823839944, guid: 5b544f59749678947b7c88974246090d,
+    type: 3}
+  m_PrefabInstance: {fileID: 800638975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &800638977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1263525663949091704, guid: 5b544f59749678947b7c88974246090d,
+    type: 3}
+  m_PrefabInstance: {fileID: 800638975}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &809789356 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5151407196807469988, guid: 90f14e043af60de4b9a5004229b58b33,
@@ -21621,6 +21633,11 @@ PrefabInstance:
       objectReference: {fileID: 1378903101}
     - target: {fileID: 3234685258786711391, guid: 254c7d5372e4c6c4cba01449087c7813,
         type: 3}
+      propertyPath: winCanvas
+      value: 
+      objectReference: {fileID: 800638977}
+    - target: {fileID: 3234685258786711391, guid: 254c7d5372e4c6c4cba01449087c7813,
+        type: 3}
       propertyPath: birdspawn1
       value: 
       objectReference: {fileID: 1590618517}
@@ -21914,6 +21931,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4600031622407711086, guid: d97392b8ef2ac034fbf28460ef4b2d77,
+        type: 3}
+      propertyPath: loseCanvas
+      value: 
+      objectReference: {fileID: 800638976}
     - target: {fileID: 6714893273485768654, guid: d97392b8ef2ac034fbf28460ef4b2d77,
         type: 3}
       propertyPath: m_LocalPosition.x

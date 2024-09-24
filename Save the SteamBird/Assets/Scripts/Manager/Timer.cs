@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TMP_Text time;
     public bool timeIsRunning = true;
     bool activateLose = true;
+    public GameObject loseCanvas; 
 
     /// <summary>
     /// This function keeps time running for the timer
@@ -24,7 +25,7 @@ public class Timer : MonoBehaviour
             {
                 if(activateLose)
                 {
-                    //lose
+                    loseCanvas.SetActive(true);
                     activateLose = false;
                 }
             }

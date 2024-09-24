@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 public class PuzzleManager : MonoBehaviour
 {
     #region Cog Vars
@@ -16,6 +16,9 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] Transform bird1, bird2, bird3;
     [SerializeField] Transform birdspawn1, birdspawn2, birdspawn3;
     #endregion
+
+    public GameObject winCanvas;
+    
 
     /// <summary>
     /// This function activates the CogRandomSpawn at the start of the game
@@ -91,6 +94,6 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log($"<color=#8d28ed>You Beat The Game!!!</color>");
 
         timer.timeIsRunning = false;
-        //Activate win
+        winCanvas.SetActive(true);
     }
 }
