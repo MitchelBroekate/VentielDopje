@@ -70,14 +70,7 @@ public class Interaction : MonoBehaviour
 
                     interactable.Interact();
 
-                    if(currentHit.GetComponent<CogInteract>().cog1)
-                    {
-                        cogInInventory = 1;
-                    }
-                    else
-                    {
-                        cogInInventory = 2;
-                    }
+                    cogInInventory = currentHit.GetComponent<CogInteract>().cog;
 
                     invetoryFull = true;
                     playerControls.invetoryFull = true;
@@ -89,18 +82,7 @@ public class Interaction : MonoBehaviour
 
                     interactable.Interact();
 
-                    if(currentHit.GetComponent<BirdInteraction>().birdPart == 1)
-                    {
-                        birdPartInInventory = 1;
-                    }
-                    else if(currentHit.GetComponent<BirdInteraction>().birdPart == 2)
-                    {
-                        birdPartInInventory = 2;
-                    }
-                    else if(currentHit.GetComponent<BirdInteraction>().birdPart == 3)
-                    {
-                        birdPartInInventory = 3;
-                    }
+                    birdPartInInventory = currentHit.GetComponent<BirdInteraction>().birdPart;
 
                     invetoryFull = true;
                     playerControls.invetoryFull = true;

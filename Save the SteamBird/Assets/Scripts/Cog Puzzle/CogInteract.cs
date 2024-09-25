@@ -7,7 +7,7 @@ public class CogInteract : MonoBehaviour
     public Transform cogCarryPos;
     public bool inObjective;
 
-    public bool cog1;
+    public int cog;
     #endregion
 
     /// <summary>

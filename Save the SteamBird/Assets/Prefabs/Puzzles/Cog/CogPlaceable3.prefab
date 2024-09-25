@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 216542768854583532}
   - component: {fileID: 2641111256902235195}
   m_Layer: 3
-  m_Name: CogPlaceable1
+  m_Name: CogPlaceable3
   m_TagString: COG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   cameraParent: {fileID: 0}
   cogCarryPos: {fileID: 0}
   inObjective: 0
-  cog1: 0
+  cog: 3
 --- !u!54 &2641111256902235195
 Rigidbody:
   m_ObjectHideFlags: 0
