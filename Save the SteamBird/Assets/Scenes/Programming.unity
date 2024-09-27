@@ -576,6 +576,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 190839434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1256925726 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5961180134898525549, guid: 7eaf9042373830b4dad75323f5df7cb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 790774728569928984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1264796711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1408,11 @@ PrefabInstance:
       propertyPath: interaction
       value: 
       objectReference: {fileID: 368145569}
+    - target: {fileID: 2367105374423129793, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: cogPlacement
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3205920373740941478, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: cog1Object
@@ -1427,6 +1438,11 @@ PrefabInstance:
       propertyPath: interaction
       value: 
       objectReference: {fileID: 368145569}
+    - target: {fileID: 3205920373740941478, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: cogPlacement
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4300510705374806274, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: cog1Object
@@ -1452,6 +1468,11 @@ PrefabInstance:
       propertyPath: interaction
       value: 
       objectReference: {fileID: 368145569}
+    - target: {fileID: 4300510705374806274, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: cogPlacement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5149278311887827190, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1502,6 +1523,11 @@ PrefabInstance:
       propertyPath: interaction
       value: 
       objectReference: {fileID: 368145569}
+    - target: {fileID: 6874097744099919058, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: cogPlacement
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6951986875952832845, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1606,6 +1632,12 @@ GameObject:
 --- !u!1 &790774728569928986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2718104786726981080, guid: 7eaf9042373830b4dad75323f5df7cb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 790774728569928984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &790774728569928987 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9139122094500885481, guid: 7eaf9042373830b4dad75323f5df7cb9,
     type: 3}
   m_PrefabInstance: {fileID: 790774728569928984}
   m_PrefabAsset: {fileID: 0}
@@ -2244,6 +2276,16 @@ PrefabInstance:
       propertyPath: cog2
       value: 
       objectReference: {fileID: 1226055255}
+    - target: {fileID: 3234685258786711391, guid: 254c7d5372e4c6c4cba01449087c7813,
+        type: 3}
+      propertyPath: cog3
+      value: 
+      objectReference: {fileID: 1256925726}
+    - target: {fileID: 3234685258786711391, guid: 254c7d5372e4c6c4cba01449087c7813,
+        type: 3}
+      propertyPath: cog4
+      value: 
+      objectReference: {fileID: 790774728569928987}
     - target: {fileID: 3234685258786711391, guid: 254c7d5372e4c6c4cba01449087c7813,
         type: 3}
       propertyPath: bird1

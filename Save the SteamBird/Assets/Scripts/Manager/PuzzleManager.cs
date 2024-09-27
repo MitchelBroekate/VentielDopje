@@ -8,6 +8,8 @@ public class PuzzleManager : MonoBehaviour
     [Header("CogVars")]
     [SerializeField] Transform cog1;
     [SerializeField] Transform cog2;
+    [SerializeField] Transform cog3;
+    [SerializeField] Transform cog4;
     [SerializeField] Transform cogSpawnParent;
 
     [SerializeField] List<Transform> cogSpawnpoint = new List<Transform>();
@@ -73,7 +75,19 @@ public class PuzzleManager : MonoBehaviour
         
         int cog2Spawn = Random.Range(0, cogSpawnpoint.Count - 1);
         cog2.transform.position = cogSpawnpoint[cog2Spawn].position;
+        Transform currentCog2Spawn = cogSpawnpoint[cog2Spawn];
+        cogSpawnpoint.RemoveAt(cog2Spawn);
+
+        int cog3Spawn = Random.Range(0, cogSpawnpoint.Count - 1);
+        cog3.transform.position = cogSpawnpoint[cog3Spawn].position;
+        Transform currentCog3Spawn = cogSpawnpoint[cog3Spawn];
+        cogSpawnpoint.RemoveAt(cog3Spawn);
+
+        int cog4Spawn = Random.Range(0, cogSpawnpoint.Count - 1);
+        cog4.transform.position = cogSpawnpoint[cog4Spawn].position;
         cogSpawnpoint.Add(currentCog1Spawn);
+        cogSpawnpoint.Add(currentCog2Spawn);
+        cogSpawnpoint.Add(currentCog3Spawn);
     }
 
     /// <summary>
