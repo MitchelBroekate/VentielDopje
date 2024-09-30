@@ -6,137 +6,37 @@ public class CogPuzzleInteract : MonoBehaviour
     [Header("CogVars")]
     public int cogPlacement;
     public Interaction interaction;
-    public GameObject cog1Object;
-    public GameObject cog2Object;
-    public GameObject cog3Object;
-    public GameObject cog4Object;
+    public GameObject cogInInventory;
+
+    public bool correctSpace; 
     #endregion
 
     /// <summary>
-    /// This function allows the player to insert a Cog into the CogPuzzle
+    /// This function allows the player to insert a Cog into the CogPuzzle and checks for the correct position
     /// </summary>
     public void CogInsertion()
     {
 
-        switch (cogPlacement)
+        if(interaction.invetoryFull)
         {
-            case 1:
-                if(interaction.invetoryFull)
-                {
-                    if(interaction.cogInInventory == 1)
-                    {
-                        cog1Object.transform.parent = null;
-                        cog1Object.transform.position = transform.position;
-                        cog1Object.transform.rotation = transform.rotation;
-                        cog1Object.GetComponent<CogInteract>().inObjective = true;
+            //cogInInventory
+            cogInInventory.transform.parent = null;
+            cogInInventory.transform.position = transform.position;
+            cogInInventory.transform.rotation = transform.rotation;
 
-                        interaction.invetoryFull = false;
-                        interaction.cogInInventory = 0;
+            interaction.invetoryFull = false;
+            interaction.cogInInventory = 0;
 
-                        gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        cog1Object.transform.parent = null;
-                        cog1Object.transform.position = transform.position;
-                        cog1Object.transform.rotation = transform.rotation;
-                        
-                        interaction.invetoryFull = false;
-                        interaction.cogInInventory = 0;
-
-                        gameObject.SetActive(false);
-                    }
-                }
-            break;
-
-            case 2:
-                if(interaction.invetoryFull)
-                {
-                    if(interaction.cogInInventory == 2)
-                    {
-                        cog2Object.transform.parent = null;
-                        cog2Object.transform.position = transform.position;
-                        cog2Object.transform.rotation = transform.rotation;
-                        cog2Object.GetComponent<CogInteract>().inObjective = true;
-
-                        interaction.invetoryFull = false;
-                        interaction.cogInInventory = 0;
-
-                        gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        cog1Object.transform.parent = null;
-                        cog1Object.transform.position = transform.position;
-                        cog1Object.transform.rotation = transform.rotation;
-                        
-                        interaction.invetoryFull = false;
-                        interaction.cogInInventory = 0;
-
-                        gameObject.SetActive(false);
-                    }
-                }
-            break;
-
-            case 3:
-                if(interaction.invetoryFull)
-                {
-                    if(interaction.cogInInventory == 3)
-                    {
-                        cog3Object.transform.parent = null;
-                        cog3Object.transform.position = transform.position;
-                        cog3Object.transform.rotation = transform.rotation;
-                        cog3Object.GetComponent<CogInteract>().inObjective = true;
-
-                        interaction.invetoryFull = false;
-                        interaction.cogInInventory = 0;
-
-                        gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        cog1Object.transform.parent = null;
-                        cog1Object.transform.position = transform.position;
-                        cog1Object.transform.rotation = transform.rotation;
-                        
-                        interaction.invetoryFull = false;
-                        interaction.cogInInventory = 0;
-
-                        gameObject.SetActive(false);
-                    }
-                }
-            break;
-
-            case 4:
-                if(interaction.invetoryFull)
-                {
-                    if(interaction.cogInInventory == 4)
-                    {
-                        cog4Object.transform.parent = null;
-                        cog4Object.transform.position = transform.position;
-                        cog4Object.transform.rotation = transform.rotation;
-                        cog4Object.GetComponent<CogInteract>().inObjective = true;
-
-                        interaction.invetoryFull = false;
-                        interaction.cogInInventory = 0;
-
-                        gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        cog1Object.transform.parent = null;
-                        cog1Object.transform.position = transform.position;
-                        cog1Object.transform.rotation = transform.rotation;
-                        
-                        interaction.invetoryFull = false;
-                        interaction.cogInInventory = 0;
-
-                        gameObject.SetActive(false);
-                    }
-                }
-            break;
+            if(interaction.cogInInventory == cogPlacement)
+            {
+                correctSpace = true;
+            }
         }
 
+
+
+
     }
+
 
 }
