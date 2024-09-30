@@ -1483,6 +1483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 580773620237090534, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
+      propertyPath: currentCog
+      value: 
+      objectReference: {fileID: 883517204}
+    - target: {fileID: 580773620237090534, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
       propertyPath: cogCarryPos
       value: 
       objectReference: {fileID: 1670507066}
@@ -1623,6 +1628,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6313792524061898864, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
+      propertyPath: currentCog
+      value: 
+      objectReference: {fileID: 1226055251}
+    - target: {fileID: 6313792524061898864, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
       propertyPath: cogCarryPos
       value: 
       objectReference: {fileID: 1670507066}
@@ -1733,6 +1743,11 @@ PrefabInstance:
       objectReference: {fileID: 1703262047}
     - target: {fileID: 7603039724561668090, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
+      propertyPath: currentCog
+      value: 
+      objectReference: {fileID: 790774728569928986}
+    - target: {fileID: 7603039724561668090, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
       propertyPath: cogCarryPos
       value: 
       objectReference: {fileID: 1670507066}
@@ -1751,6 +1766,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 234423420
       objectReference: {fileID: 0}
+    - target: {fileID: 8726940495237289926, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: currentCog
+      value: 
+      objectReference: {fileID: 790774728569928985}
     - target: {fileID: 8726940495237289926, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: cogCarryPos
