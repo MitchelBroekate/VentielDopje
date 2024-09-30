@@ -6,6 +6,7 @@ public class CogInteract : MonoBehaviour
     public GameObject cameraParent;
     public Transform cogCarryPos;
     public bool inObjective;
+    public GameObject currentCog;
 
     public int cog;
     #endregion

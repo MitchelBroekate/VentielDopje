@@ -34,8 +34,7 @@ public class Interaction : MonoBehaviour
     /// </summary>
     void DoInteract()
     {
-
-
+        //sets the drop text when the player carries an item
         if(invetoryFull)
         {
             dropTXT.SetActive(true);
@@ -45,7 +44,7 @@ public class Interaction : MonoBehaviour
             dropTXT.SetActive(false);
         }
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 2, interactableLayer))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 1.5f, interactableLayer))
         {
             if(hit.transform.gameObject.tag != "COGPUZZLE")
             {
