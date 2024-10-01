@@ -9,7 +9,7 @@ public class CogPuzzleInteract : MonoBehaviour
     public Interaction interaction;
     public Transform cogInInventory;
     public Transform interactionParent;
-    int interactionComplete;
+    [SerializeField] int interactionComplete;
     #endregion
 
     /// <summary>
@@ -51,6 +51,10 @@ public class CogPuzzleInteract : MonoBehaviour
                     currentCogInInventory.GetComponent<CogInteract>().inObjective = true;
                     currentCogInInventory.GetComponent<BoxCollider>().enabled = false;
                 }
+            }
+            else
+            {
+                interactionComplete = 0;
             }
             
         }
