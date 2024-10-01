@@ -1026,6 +1026,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 161819848744606797}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1763602641 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5557647636133547779, guid: 7eaf9042373830b4dad75323f5df7cb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 790774728569928984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1826220903 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 953366419578275810, guid: 5af9c55d0c6276441a4d4b33e7927c89,
@@ -1536,6 +1542,11 @@ PrefabInstance:
       propertyPath: cogPlacement
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2367105374423129793, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: interactionParent
+      value: 
+      objectReference: {fileID: 1763602641}
     - target: {fileID: 3205920373740941478, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: cog1Object
@@ -1566,6 +1577,11 @@ PrefabInstance:
       propertyPath: cogPlacement
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3205920373740941478, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: interactionParent
+      value: 
+      objectReference: {fileID: 1763602641}
     - target: {fileID: 4009223631385819079, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: m_Mass
@@ -1601,6 +1617,11 @@ PrefabInstance:
       propertyPath: cogPlacement
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4300510705374806274, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: interactionParent
+      value: 
+      objectReference: {fileID: 1763602641}
     - target: {fileID: 5093746025977044711, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: m_Mass
@@ -1611,6 +1632,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ef8564c63153404b817e2bca2063749, type: 2}
+    - target: {fileID: 5557647636133547779, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.676
+      objectReference: {fileID: 0}
     - target: {fileID: 5630942546254244653, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: m_Mass
@@ -1676,6 +1702,11 @@ PrefabInstance:
       propertyPath: cogPlacement
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6874097744099919058, guid: 7eaf9042373830b4dad75323f5df7cb9,
+        type: 3}
+      propertyPath: interactionParent
+      value: 
+      objectReference: {fileID: 1763602641}
     - target: {fileID: 6951986875952832845, guid: 7eaf9042373830b4dad75323f5df7cb9,
         type: 3}
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target

@@ -8,8 +8,9 @@ public class Interaction : MonoBehaviour
     RaycastHit hit;
     public bool invetoryFull;
 
-    public int cogInInventory;
+    public int cogInt;
     public int birdPartInInventory;
+    public Transform cogInInventory;
 
     public GameObject interactTXT;
     public GameObject dropTXT;
@@ -46,7 +47,8 @@ public class Interaction : MonoBehaviour
 
         if(Physics.Raycast(transform.position, transform.forward, out hit, 1.5f, interactableLayer))
         {
-            if(hit.transform.gameObject.tag != "COGPUZZLE")
+            Debug.Log(hit.transform.tag);
+            if(hit.transform.tag != "COGPUZZLE")
             {
                 interactTXT.SetActive(true);
             }
@@ -62,20 +64,21 @@ public class Interaction : MonoBehaviour
                 
                 Transform currentHit = hit.transform;
                 
-                if(hit.collider.gameObject.tag == "COG")
+                if(hit.collider.tag == "COG")
                 {
 
                     if(invetoryFull) return;
 
                     interactable.Interact();
 
-                    cogInInventory = currentHit.GetComponent<CogInteract>().cog;
+                    cogInt = currentHit.GetComponent<CogInteract>().cog;
+                    cogInInventory = currentHit.transform;
 
                     invetoryFull = true;
                     playerControls.invetoryFull = true;
                 }
                 
-                else if(hit.collider.gameObject.tag == "BIRDPART")
+                else if(hit.collider.tag == "BIRDPART")
                 {
                     if(invetoryFull) return;
 
