@@ -7,6 +7,7 @@ public class CogInteract : MonoBehaviour
     public Transform cogCarryPos;
     public bool inObjective;
     public GameObject currentCog;
+    public bool inInventory;
 
     public int cog;
     #endregion
@@ -17,6 +18,7 @@ public class CogInteract : MonoBehaviour
     public void CogCarry()
     {
         if(inObjective) return;
+        inInventory = true;
         transform.parent = cameraParent.transform;
         transform.position = cogCarryPos.position;
         GetComponent<Rigidbody>().isKinematic = true;

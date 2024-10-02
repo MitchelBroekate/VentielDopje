@@ -12,6 +12,21 @@ public class CogPuzzleInteract : MonoBehaviour
     [SerializeField] int interactionComplete;
     #endregion
 
+    void Update()
+    {
+        if(cogInInventory != null)
+        {
+            if(cogInInventory.GetComponent<CogInteract>().inInventory)
+            {
+                correctSpace = false;
+
+                cogInInventory = null;
+
+                transform.GetComponent<SphereCollider>().enabled = true;
+            }
+        }
+    }
+
     /// <summary>
     /// This function allows the player to insert a Cog into the CogPuzzle and checks for the correct position
     /// </summary>
@@ -21,10 +36,12 @@ public class CogPuzzleInteract : MonoBehaviour
         if(interaction.invetoryFull)
         {
             cogInInventory = interaction.cogInInventory;
+            cogInInventory.GetComponent<CogInteract>().inInventory = false;
             cogInInventory.GetComponent<BoxCollider>().enabled = true;
             cogInInventory.parent = null;
             cogInInventory.position = transform.position;
             cogInInventory.rotation = transform.rotation;
+            transform.GetComponent<SphereCollider>().enabled = false;
 
             if(interaction.cogInt == cogPlacement)
             {

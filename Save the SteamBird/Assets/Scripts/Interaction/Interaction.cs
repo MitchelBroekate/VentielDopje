@@ -47,7 +47,6 @@ public class Interaction : MonoBehaviour
 
         if(Physics.Raycast(transform.position, transform.forward, out hit, 1.5f, interactableLayer))
         {
-            Debug.Log(hit.transform.tag);
             if(hit.transform.tag != "COGPUZZLE")
             {
                 interactTXT.SetActive(true);
