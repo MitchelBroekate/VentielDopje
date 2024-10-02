@@ -39,8 +39,8 @@ public class CogPuzzleInteract : MonoBehaviour
             cogInInventory.GetComponent<CogInteract>().inInventory = false;
             cogInInventory.GetComponent<BoxCollider>().enabled = true;
             cogInInventory.parent = null;
-            cogInInventory.position = transform.position;
-            cogInInventory.rotation = transform.rotation;
+            cogInInventory.position = transform.GetChild(0).position;
+            cogInInventory.rotation = transform.GetChild(0).rotation;
             transform.GetComponent<SphereCollider>().enabled = false;
 
             if(interaction.cogInt == cogPlacement)
