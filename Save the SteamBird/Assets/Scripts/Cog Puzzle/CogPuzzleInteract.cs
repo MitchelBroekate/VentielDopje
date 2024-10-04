@@ -32,46 +32,49 @@ public class CogPuzzleInteract : MonoBehaviour
     /// </summary>
     public void CogInsertion()
     {
-
-        if(interaction.invetoryFull)
+        if(interaction.cogInInventory != null)
         {
-            cogInInventory = interaction.cogInInventory;
-            cogInInventory.GetComponent<CogInteract>().inInventory = false;
-            cogInInventory.GetComponent<BoxCollider>().enabled = true;
-            cogInInventory.parent = null;
-            cogInInventory.position = transform.GetChild(0).position;
-            cogInInventory.rotation = transform.GetChild(0).rotation;
-            transform.GetComponent<SphereCollider>().enabled = false;
 
-            if(interaction.cogInt == cogPlacement)
+            if(interaction.invetoryFull)
             {
-                correctSpace = true;
-            }
+                cogInInventory = interaction.cogInInventory;
+                cogInInventory.GetComponent<CogInteract>().inInventory = false;
+                cogInInventory.GetComponent<BoxCollider>().enabled = true;
+                cogInInventory.parent = null;
+                cogInInventory.position = transform.GetChild(0).position;
+                cogInInventory.rotation = transform.GetChild(0).rotation;
+                transform.GetComponent<SphereCollider>().enabled = false;
 
-            interaction.invetoryFull = false;
-            interaction.cogInt = 0;
-            interaction.cogInInventory = null;
-
-            for(int i = 0; i < interactionParent.childCount; i++)
-            {
-                if(interactionParent.GetChild(i).GetComponent<CogPuzzleInteract>().correctSpace)
+                if(interaction.cogInt == cogPlacement)
                 {
-                    interactionComplete++;
+                    correctSpace = true;
                 }
-            }
 
-            if(interactionComplete == 4)
-            {
+                interaction.invetoryFull = false;
+                interaction.cogInt = 0;
+                interaction.cogInInventory = null;
+
                 for(int i = 0; i < interactionParent.childCount; i++)
                 {
-                    Transform currentCogInInventory = interactionParent.GetChild(i).GetComponent<CogPuzzleInteract>().cogInInventory;
-                    currentCogInInventory.GetComponent<CogInteract>().inObjective = true;
-                    currentCogInInventory.GetComponent<BoxCollider>().enabled = false;
+                    if(interactionParent.GetChild(i).GetComponent<CogPuzzleInteract>().correctSpace)
+                    {
+                        interactionComplete++;
+                    }
                 }
-            }
-            else
-            {
-                interactionComplete = 0;
+
+                if(interactionComplete == 4)
+                {
+                    for(int i = 0; i < interactionParent.childCount; i++)
+                    {
+                        Transform currentCogInInventory = interactionParent.GetChild(i).GetComponent<CogPuzzleInteract>().cogInInventory;
+                        currentCogInInventory.GetComponent<CogInteract>().inObjective = true;
+                        currentCogInInventory.GetComponent<BoxCollider>().enabled = false;
+                    }
+                }
+                else
+                {
+                    interactionComplete = 0;
+                }
             }
             
         }

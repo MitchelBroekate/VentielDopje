@@ -13,6 +13,8 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] Transform cogSpawnParent;
 
     [SerializeField] List<Transform> cogSpawnpoint = new List<Transform>();
+
+    [SerializeField] Transform looseCogs;
     #endregion
 
     #region BirdParts Vars
@@ -48,6 +50,15 @@ public class PuzzleManager : MonoBehaviour
         if(cog1.GetComponent<CogInteract>().inObjective && cog2.GetComponent<CogInteract>().inObjective)
         {
             Debug.Log($"<color=#ff0015>Completed the Cog puzzle!</color>");
+
+            for(int i = 0; i < looseCogs.childCount; i++)
+            {
+                looseCogs.GetChild(i).GetComponent<CogRotate>().canRotate = true;
+                cog1.GetComponent<CogRotate>().canRotate = true;
+                cog2.GetComponent<CogRotate>().canRotate = true;
+                cog3.GetComponent<CogRotate>().canRotate = true;
+                cog4.GetComponent<CogRotate>().canRotate = true;
+            }
 
             bird1.transform.position = birdspawn1.position;
         }

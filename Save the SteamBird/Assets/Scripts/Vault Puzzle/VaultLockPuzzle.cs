@@ -42,6 +42,16 @@ public class VaultLockPuzzle : MonoBehaviour
     public GameObject vaultKeys;
     #endregion
 
+    #region VaultDial
+    [Header("VaultDial")]
+    public GameObject vaultDial;
+    #endregion
+
+    #region Animator
+    [Header("Animator")]
+    public Animator animator;
+    #endregion
+
     /// <summary>
     /// This function updates the cam switcher, check if you can switch cams and updates the vault code selector
     /// </summary>
@@ -70,7 +80,7 @@ public class VaultLockPuzzle : MonoBehaviour
     {
         if(context.performed)
         {
-            transform.Rotate(0, 0, 36);
+            vaultDial.transform.Rotate(0, 0, 36);
 
             if(currentCodePiece >0)
             {
@@ -91,7 +101,7 @@ public class VaultLockPuzzle : MonoBehaviour
     {
         if(context.performed)
         {
-            transform.Rotate(0, 0, -36);
+            vaultDial.transform.Rotate(0, 0, -36);
 
             if(currentCodePiece < 9)
             {
@@ -113,6 +123,8 @@ public class VaultLockPuzzle : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(1))
             {
+
+                Debug.Log(currentCodePiece);
 
                 if(code4 == null && code3 != null)
                 {
@@ -181,6 +193,7 @@ public class VaultLockPuzzle : MonoBehaviour
         if(String.Compare(timeCode, fullCode) == 0)
         {
             puzzleManager.VaultPuzzleComplete();
+            animator.SetBool("DoorOpen", true);
         }
         else
         {

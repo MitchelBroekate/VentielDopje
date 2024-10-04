@@ -2064,6 +2064,11 @@ PrefabInstance:
       objectReference: {fileID: 860423531}
     - target: {fileID: 8642930039994288922, guid: 1cdd94c2ec6e53e46a77f62f9825ff30,
         type: 3}
+      propertyPath: vaultDial
+      value: 
+      objectReference: {fileID: 590491078}
+    - target: {fileID: 8642930039994288922, guid: 1cdd94c2ec6e53e46a77f62f9825ff30,
+        type: 3}
       propertyPath: vaultKeys
       value: 
       objectReference: {fileID: 471772715}

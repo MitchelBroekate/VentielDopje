@@ -5,12 +5,21 @@ using UnityEngine;
 public class CogRotate : MonoBehaviour
 {
     public bool canRotate;
+    public bool rotateDir;
 
     void FixedUpdate()
     {
+
         if(canRotate)
         {
-            transform.Rotate(new Vector3(0, 3, 0));
+            if(rotateDir)
+            {
+                transform.Rotate(new Vector3(0, 3, 0));
+            }
+            else
+            {
+                transform.Rotate(new Vector3(0, -3, 0));
+            }
         }
     }
 }
