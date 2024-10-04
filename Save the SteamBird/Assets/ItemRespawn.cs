@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class ItemRespawn : MonoBehaviour
 {
+    public bool respawnType;
     void OnCollisionEnter(Collision collision)
     {
-        collision.transform.position += new Vector3(0, 0.30f, 0);
+        if(respawnType)
+        {
+            collision.transform.position += new Vector3(0, 0.3f, 0);
+        }
+        else
+        {
+            collision.transform.position += transform.forward + new Vector3(0, 0.3f, 0);
+        }
     }
 }
