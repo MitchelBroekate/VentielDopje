@@ -38433,7 +38433,8 @@ PrefabInstance:
       value: EscapeRoomVersie1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1870916028897104185, guid: be8925a6c50797940aa776ac17f431db, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be8925a6c50797940aa776ac17f431db, type: 3}
