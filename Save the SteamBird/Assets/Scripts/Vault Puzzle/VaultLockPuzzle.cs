@@ -13,12 +13,8 @@ public class VaultLockPuzzle : MonoBehaviour
 
     #region ClockCode
     [Header("ClockCode")]
-    public SetClockTime setClockTime;
-
     int currentCodePiece = 0;
-
     string timeCode;
-
     string fullCode ;
     string code1 = null;
     string code2 = null;
@@ -184,9 +180,9 @@ public class VaultLockPuzzle : MonoBehaviour
     /// </summary>
     void ClockTime()
     {
-        timeCode = setClockTime.timeCode;
+        timeCode = puzzleManager.timeCode;
 
-        fullCode = code1 + code2 + ":" + code3 + code4;
+        fullCode = code1 + code2 +  code3 + code4;
 
         Debug.Log(fullCode);
 
