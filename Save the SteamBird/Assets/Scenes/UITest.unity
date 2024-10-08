@@ -20410,6 +20410,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4756772966729338511, guid: 086e2fca4f80b5849931e4396b190947,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 1.5707963
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756772966729338511, guid: 086e2fca4f80b5849931e4396b190947,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 0.9826995
+      objectReference: {fileID: 0}
     - target: {fileID: 5777803227798721806, guid: 086e2fca4f80b5849931e4396b190947,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20464,6 +20474,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoomSteam2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019787513290782810, guid: 086e2fca4f80b5849931e4396b190947,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].time
+      value: 0.023784637
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019787513290782810, guid: 086e2fca4f80b5849931e4396b190947,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 0.9891968
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019787513290782810, guid: 086e2fca4f80b5849931e4396b190947,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 0.061538696
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019787513290782810, guid: 086e2fca4f80b5849931e4396b190947,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.051280975
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
