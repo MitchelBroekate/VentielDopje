@@ -48,6 +48,10 @@ public class VaultLockPuzzle : MonoBehaviour
     public Animator animator;
     #endregion
 
+    #region RotateAngle
+    public Transform rotateAngle;
+    #endregion
+
     /// <summary>
     /// This function updates the cam switcher, check if you can switch cams and updates the vault code selector
     /// </summary>
@@ -66,6 +70,8 @@ public class VaultLockPuzzle : MonoBehaviour
             allowCamSwitch = false;
             camSwitch = false;
         }
+
+        vaultDial.transform.rotation = Quaternion.Lerp(vaultDial.transform.rotation, rotateAngle.rotation, 2f * Time.deltaTime);
     }
 
     /// <summary>
@@ -76,7 +82,9 @@ public class VaultLockPuzzle : MonoBehaviour
     {
         if(context.performed)
         {
-            vaultDial.transform.Rotate(0, 0, 36);
+            rotateAngle.Rotate(0, 0, 36);
+
+            
 
             if(currentCodePiece >0)
             {
@@ -97,7 +105,9 @@ public class VaultLockPuzzle : MonoBehaviour
     {
         if(context.performed)
         {
-            vaultDial.transform.Rotate(0, 0, -36);
+            rotateAngle.Rotate(0, 0, -36);
+
+            
 
             if(currentCodePiece < 9)
             {

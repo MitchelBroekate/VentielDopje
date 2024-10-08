@@ -138,7 +138,7 @@ public class PlayerControls : MonoBehaviour
         {
             if(value.isPressed)
             {
-                Transform pickUpChild = cam.GetChild(1).transform;
+                Transform pickUpChild = transform.GetChild(5).transform;
 
                     if (pickUpChild.tag == "COG" || pickUpChild.tag == "BIRDPART")
                     {

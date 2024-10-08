@@ -20,6 +20,7 @@ public class BirdInteraction : MonoBehaviour
         if(inObjective) return;
         transform.parent = playerParent.transform;
         transform.position = birdPartCarryPos.position;
+        transform.rotation = birdPartCarryPos.rotation;
         GetComponent<Rigidbody>().isKinematic = true;
     }
 }
