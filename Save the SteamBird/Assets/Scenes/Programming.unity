@@ -35668,11 +35668,6 @@ PrefabInstance:
       propertyPath: pipePuzzleManager
       value: 
       objectReference: {fileID: 1965179887}
-    - target: {fileID: 3895044135489112653, guid: 9b1cb3da374b06a4caf41dcc7420d868,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4460133918842465812, guid: 9b1cb3da374b06a4caf41dcc7420d868,
         type: 3}
       propertyPath: pipePuzzleManager
