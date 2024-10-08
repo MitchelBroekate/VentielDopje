@@ -21,6 +21,7 @@ public class CogInteract : MonoBehaviour
         inInventory = true;
         transform.parent = playerParent.transform;
         transform.position = cogCarryPos.position;
+        transform.rotation = cogCarryPos.rotation;
         GetComponent<Rigidbody>().isKinematic = true;
     }
 }
