@@ -20,7 +20,7 @@ public class PipePuzzleManager : MonoBehaviour
     #endregion
 
     #region LastFixablePipe
-    public int lastPipe = 10;
+    public int lastPipe;
     #endregion
 
     /// <summary>
@@ -43,7 +43,7 @@ public class PipePuzzleManager : MonoBehaviour
         else
         {
             FixableAirvent++;
-            currentAirvent = UnityEngine.Random.Range(0, 4);
+            currentAirvent = UnityEngine.Random.Range(1, 6);
 
             if(currentAirvent == lastPipe)
             {
@@ -61,23 +61,23 @@ public class PipePuzzleManager : MonoBehaviour
 
                 switch(currentAirvent)
                 {
-                    case 0:
+                    case 1:
                     airVent1.GetChild(0).gameObject.SetActive(true);
                     break;
 
-                    case 1:
+                    case 2:
                     airVent2.GetChild(0).gameObject.SetActive(true);
                     break;
 
-                    case 2:
+                    case 3:
                     airVent3.GetChild(0).gameObject.SetActive(true);
                     break;
 
-                    case 3:
+                    case 4:
                     airVent4.GetChild(0).gameObject.SetActive(true);
                     break;
 
-                    case 4:
+                    case 5:
                     airVent5.GetChild(0).gameObject.SetActive(true);
                     break;
                 }
