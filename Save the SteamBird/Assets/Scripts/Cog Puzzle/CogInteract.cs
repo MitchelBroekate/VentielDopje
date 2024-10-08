@@ -3,7 +3,7 @@ using UnityEngine;
 public class CogInteract : MonoBehaviour
 {
     #region Vars
-    public GameObject cameraParent;
+    public GameObject playerParent;
     public Transform cogCarryPos;
     public bool inObjective;
     public GameObject currentCog;
@@ -19,9 +19,8 @@ public class CogInteract : MonoBehaviour
     {
         if(inObjective) return;
         inInventory = true;
-        transform.parent = cameraParent.transform;
+        transform.parent = playerParent.transform;
         transform.position = cogCarryPos.position;
         GetComponent<Rigidbody>().isKinematic = true;
-        GetComponent<BoxCollider>().enabled = false;
     }
 }

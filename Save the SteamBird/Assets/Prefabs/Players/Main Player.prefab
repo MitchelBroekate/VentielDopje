@@ -34,6 +34,7 @@ Transform:
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1197633816942744971}
   - {fileID: 4062116145445261729}
   - {fileID: 1567266728024940983}
   - {fileID: 824970275054506072}
@@ -117,6 +118,7 @@ MonoBehaviour:
   mouseSens: 500
   interaction: {fileID: 3752067508639531903}
   invetoryFull: 0
+  winMovement: 0
 --- !u!114 &5687501822302001559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,8 +452,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1197633816942744971}
+  m_Children: []
   m_Father: {fileID: 7698282203335319619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &445731095269803894
@@ -571,8 +572,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControls: {fileID: 2851408214697340479}
   invetoryFull: 0
-  cogInInventory: 0
+  cogInt: 0
   birdPartInInventory: 0
+  cogInInventory: {fileID: 0}
   interactTXT: {fileID: 1747724882098827839}
   dropTXT: {fileID: 2506000314307068229}
   interactableLayer:
@@ -767,10 +769,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7223244270223023268}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.461, y: -0.501, z: 1.003}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.4609999, y: 0.29900008, z: 1.0030003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4062116145445261729}
+  m_Father: {fileID: 7698282203335319619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

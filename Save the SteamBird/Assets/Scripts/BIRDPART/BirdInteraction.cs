@@ -5,7 +5,7 @@ using UnityEngine;
 public class BirdInteraction : MonoBehaviour
 {
     #region Vars
-    public GameObject cameraParent;
+    public GameObject playerParent;
     public Transform birdPartCarryPos;
     public bool inObjective;
 
@@ -18,9 +18,8 @@ public class BirdInteraction : MonoBehaviour
     public void BirdPartCarry()
     {
         if(inObjective) return;
-        transform.parent = cameraParent.transform;
+        transform.parent = playerParent.transform;
         transform.position = birdPartCarryPos.position;
         GetComponent<Rigidbody>().isKinematic = true;
-        GetComponent<BoxCollider>().enabled = false;
     }
 }
