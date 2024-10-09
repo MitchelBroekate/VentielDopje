@@ -25,7 +25,7 @@ public class PipeInteractable : MonoBehaviour
             pipePuzzleManager.lastPipe = valveInt;
             pipePuzzleManager.RandomPipeSelector();
 
-            rotateObject.transform.Rotate(0, 0, 180);
+            rotateObject.transform.Rotate(0, 180, 0);
         }
         else
         {
