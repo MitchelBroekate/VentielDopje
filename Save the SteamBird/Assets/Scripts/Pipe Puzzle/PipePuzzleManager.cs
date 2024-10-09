@@ -22,6 +22,11 @@ public class PipePuzzleManager : MonoBehaviour
     #region LastFixablePipe
     public int lastPipe;
     #endregion
+    
+    #region CompletionLock
+    public bool completionLock;
+    #endregion
+
 
     /// <summary>
     /// Sets the first fixable pipe
@@ -39,6 +44,7 @@ public class PipePuzzleManager : MonoBehaviour
         if(FixableAirvent > 4)
         {
             PuzzleCompleted();
+            completionLock = true;
         }
         else
         {
@@ -49,7 +55,6 @@ public class PipePuzzleManager : MonoBehaviour
             {
                 RandomPipeSelector();
                 FixableAirvent--;
-                return;
             }
             else
             {
