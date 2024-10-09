@@ -6,7 +6,8 @@ public class Timer : MonoBehaviour
     #region TimerVars
     [Header("TimeVars")]
     [SerializeField] float timerTime = 600;
-    [SerializeField] TMP_Text time;
+    [SerializeField] TMP_Text timeM;
+    [SerializeField] TMP_Text timeS;
     public bool timeIsRunning = true;
     #endregion
 
@@ -70,6 +71,7 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay/60);
         float seconds = Mathf.FloorToInt(timeToDisplay%60);
 
-        time.text = string.Format("{00:00}:{01:00}", minutes, seconds);
+        timeM.text = string.Format("{00:00}", minutes);
+        timeS.text = string.Format("{00:00}", seconds);
     }
 }
