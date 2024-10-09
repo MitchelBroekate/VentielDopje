@@ -12,7 +12,7 @@ public class PipeInteractable : MonoBehaviour
     /// </summary>
     public void PipeInteract()
     {
-        if(pipePuzzleManager.FixableAirvent > 5) return;
+        if(pipePuzzleManager.FixableAirvent > 4) return;
 
         if(valveInt == pipePuzzleManager.currentAirvent)
         {
