@@ -67,6 +67,7 @@ public class Settings : MonoBehaviour
     {
         audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+       
     }
 
     public void SetSFX(float sliderValue)
