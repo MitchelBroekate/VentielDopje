@@ -22,5 +22,7 @@ public class BirdInteraction : MonoBehaviour
         transform.position = birdPartCarryPos.position;
         transform.rotation = birdPartCarryPos.rotation;
         GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<BoxCollider>().enabled = false;
+
     }
 }

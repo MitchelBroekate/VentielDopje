@@ -58,6 +58,13 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] GameObject playerCanvas;
     #endregion
 
+    #region CogWorkbench
+    [Header("CogWorkbench")]
+    [SerializeField] Transform workbench;
+    [SerializeField] Transform moveLocation;
+    bool allowWorkbenchMove;
+    #endregion
+
     [Header("WinCanvas")]
     [SerializeField] GameObject winCanvas;
 
@@ -68,6 +75,13 @@ public class PuzzleManager : MonoBehaviour
     {
         CogRandomSpawn();
         SetVaultCodeTime();
+    }
+    void Update()
+    {
+        if(allowWorkbenchMove)
+        {
+            workbench.position = Vector3.Lerp(workbench.position, moveLocation.position, 3f * Time.deltaTime);
+        }
     }
 
     /// <summary>
@@ -89,6 +103,8 @@ public class PuzzleManager : MonoBehaviour
             }
 
             bird1.transform.position = birdspawn1.position;
+
+            allowWorkbenchMove = true;
         }
     }
 

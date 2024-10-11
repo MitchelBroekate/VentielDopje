@@ -39,7 +39,7 @@ public class BirdPart : MonoBehaviour
         {
             if(interaction.birdPartInInventory == 1)
             {
-                bird1Object.transform.parent = null;
+                bird1Object.transform.parent = transform;
                 bird1Object.transform.position = birdObjective1.transform.position;
                 bird1Object.transform.rotation = birdObjective1.transform.rotation;
                 bird1Object.GetComponent<BirdInteraction>().inObjective = true;
@@ -52,7 +52,7 @@ public class BirdPart : MonoBehaviour
 
             else if(interaction.birdPartInInventory == 2)
             {
-                bird2Object.transform.parent = null;
+                bird2Object.transform.parent = transform;
                 bird2Object.transform.position = birdObjective2.transform.position;
                 bird2Object.transform.rotation = birdObjective2.transform.rotation;
                 bird2Object.GetComponent<BirdInteraction>().inObjective = true;
@@ -65,7 +65,7 @@ public class BirdPart : MonoBehaviour
 
             else if(interaction.birdPartInInventory == 3)
             {
-                bird3Object.transform.parent = null;
+                bird3Object.transform.parent = transform;
                 bird3Object.transform.position = birdObjective3.transform.position;
                 bird3Object.transform.rotation = birdObjective3.transform.rotation;
                 bird3Object.GetComponent<BirdInteraction>().inObjective = true;

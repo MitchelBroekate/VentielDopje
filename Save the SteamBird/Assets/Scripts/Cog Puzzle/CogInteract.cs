@@ -23,5 +23,6 @@ public class CogInteract : MonoBehaviour
         transform.position = cogCarryPos.position;
         transform.rotation = cogCarryPos.rotation;
         GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<BoxCollider>().enabled = false;
     }
 }
