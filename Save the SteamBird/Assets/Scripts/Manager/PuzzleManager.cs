@@ -250,7 +250,7 @@ public class PuzzleManager : MonoBehaviour
     {
         Debug.Log($"<color=#8d28ed>You Beat The Game!!!</color>");
 
-        timer.timeIsRunning = false;
+        timer.timerIsRunning = false;
         Cursor.lockState = CursorLockMode.None;
         playerControls.winMovement = true;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;

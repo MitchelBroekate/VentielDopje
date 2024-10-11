@@ -3,13 +3,6 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    #region TimerVars
-    [Header("TimeVars")]
-    [SerializeField] float timerTime = 600;
-    [SerializeField] TMP_Text timeM;
-    [SerializeField] TMP_Text timeS;
-    public bool timeIsRunning = true;
-    #endregion
 
     #region LoseVars
     [Header(header: "LoseVars")]
@@ -24,32 +17,62 @@ public class Timer : MonoBehaviour
     [SerializeField] GameObject playerCanvas;
     #endregion
 
+    #region TimerText
+    [Header("TimerText")]
+    public TextMeshProUGUI minuteTens;
+    public TextMeshProUGUI minuteOnes;
+    public TextMeshProUGUI secondTens;
+    public TextMeshProUGUI secondOnes;
+    #endregion
+    
+    #region TimeChecks
+    [Header("TimeChecks")]
+    public float timeRemaining = 600;
+    public bool timerIsRunning = false;
+    #endregion
+
+    void Start()
+    {
+        timerIsRunning = true;
+    }
+
     /// <summary>
-    /// This function keeps time running for the timer
+    /// This function keeps time running for the timer and activates the lose screen if the timer hits 0
     /// </summary>
     void Update()
     {
-        if(timeIsRunning)
+        if (timerIsRunning)
         {
-            if(timerTime > 0)
+            if (timeRemaining > 0)
             {
-                timerTime -= Time.deltaTime;
+                timeRemaining -= Time.deltaTime;
+                UpdateTimerDisplay(timeRemaining);
             }
             else
             {
-                if(activateLose)
-                {
-                    loseCanvas.SetActive(true);
-                    activateLose = false;
-                    timeIsRunning = false;
-                    Cursor.lockState = CursorLockMode.None;
-                    playerControls.winMovement = true;
-                    player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    playerCanvas.SetActive(false);
-                }
+                timeRemaining = 0;
+                timerIsRunning = false;
+                UpdateTimerDisplay(timeRemaining);
             }
+        }
+        else if(activateLose)
+        {
+            timeRemaining = 0;
+            UpdateTimerDisplay(timeRemaining);
 
-            DisplayTime(timerTime);
+            loseCanvas.SetActive(true);
+
+            timerIsRunning = false;
+
+            Cursor.lockState = CursorLockMode.None;
+
+            playerControls.winMovement = true;
+
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+            playerCanvas.SetActive(false);
+            
+            activateLose = false;
         }
     }
 
@@ -57,21 +80,21 @@ public class Timer : MonoBehaviour
     /// This function formats and displays the time
     /// </summary>
     /// <param name="timeToDisplay"></param>
-    void DisplayTime(float timeToDisplay)
+    void UpdateTimerDisplay(float timeToDisplay)
     {
-        if(timeToDisplay < 0)
-        {
-            timeToDisplay = 0;
-        }
-        else if(timeToDisplay > 0)
-        {
-            timeToDisplay += 1;
-        }
 
-        float minutes = Mathf.FloorToInt(timeToDisplay/60);
-        float seconds = Mathf.FloorToInt(timeToDisplay%60);
+        int minutes = Mathf.FloorToInt(timeToDisplay / 60); 
+        int seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        timeM.text = string.Format("{00:00}", minutes);
-        timeS.text = string.Format("{00:00}", seconds);
+        int minuteTensValue = minutes / 10;
+        int minuteOnesValue = minutes % 10;
+        int secondTensValue = seconds / 10;
+        int secondOnesValue = seconds % 10;
+
+        minuteTens.text = minuteTensValue.ToString();
+        minuteOnes.text = minuteOnesValue.ToString();
+
+        secondTens.text = secondTensValue.ToString();
+        secondOnes.text = secondOnesValue.ToString();
     }
 }
