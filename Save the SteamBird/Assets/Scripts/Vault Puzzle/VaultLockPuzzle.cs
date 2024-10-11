@@ -28,9 +28,10 @@ public class VaultLockPuzzle : MonoBehaviour
     bool allowCamSwitch = true;
     #endregion
 
-    #region Script
-    [Header("Script")]
+    #region Scripts
+    [Header("Scripts")]
     public PuzzleManager puzzleManager;
+    public PlayerControls playerControls;
     #endregion
 
     #region VaultKeybind
@@ -181,6 +182,7 @@ public class VaultLockPuzzle : MonoBehaviour
                 vaultKeys.SetActive(false);
 
                 allowCamSwitch = true;
+                playerControls.crouchPressedB = false;
             }
         }
     }

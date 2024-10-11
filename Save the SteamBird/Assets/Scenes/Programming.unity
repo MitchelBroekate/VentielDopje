@@ -38927,6 +38927,7 @@ MonoBehaviour:
   player: {fileID: 1487407101}
   vaultCam: {fileID: 965519933}
   puzzleManager: {fileID: 1726922969}
+  playerControls: {fileID: 1487407103}
   vaultKeys: {fileID: 1074851564}
   vaultDial: {fileID: 4486673103496705774}
   animator: {fileID: 3434878584686597795}

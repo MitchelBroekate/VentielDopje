@@ -25,7 +25,7 @@ public class PlayerControls : MonoBehaviour
     #region ExtraKey Variables
     [Header("ExtraKeyVars")]
     public Interaction interaction;
-    bool crouchPressedB;
+    public bool crouchPressedB;
     public bool invetoryFull;
 
     public bool winMovement;
