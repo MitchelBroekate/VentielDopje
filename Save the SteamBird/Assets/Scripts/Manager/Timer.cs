@@ -55,7 +55,7 @@ public class Timer : MonoBehaviour
                 UpdateTimerDisplay(timeRemaining);
             }
         }
-        else if(activateLose)
+        else if(activateLose && timeRemaining <= 0)
         {
             timeRemaining = 0;
             UpdateTimerDisplay(timeRemaining);
