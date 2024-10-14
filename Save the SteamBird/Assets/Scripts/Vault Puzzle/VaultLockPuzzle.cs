@@ -13,6 +13,7 @@ public class VaultLockPuzzle : MonoBehaviour
 
     #region ClockCode
     [Header("ClockCode")]
+    bool canInputCode = true;
     int currentCodePiece = 0;
     string timeCode;
     string fullCode ;
@@ -130,13 +131,16 @@ public class VaultLockPuzzle : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(1))
             {
+                if(!canInputCode) canInputCode = true;
 
                 if(code4 == null && code3 != null)
                 {
                     code4 = currentCodePiece.ToString();
 
                     ClockTime();
+                    canInputCode = false;
                 }
+                if(!canInputCode) return;
 
                 if(code3 == null && code2 != null) 
                 {
@@ -150,11 +154,11 @@ public class VaultLockPuzzle : MonoBehaviour
 
                 if(code1 == null)
                 {
-                    Debug.Log("isNull");
                     code1 = currentCodePiece.ToString();
+                    Debug.Log(code1);
                 }
 
-                Debug.Log(currentCodePiece);
+                Debug.Log("(" + currentCodePiece + ")" + " is the current code piece");
             }
         }
         
@@ -192,7 +196,7 @@ public class VaultLockPuzzle : MonoBehaviour
     /// This function checks the code with the time code and resets it if its wrong
     /// </summary>
     void ClockTime()
-    {
+    { 
         timeCode = puzzleManager.timeCode;
 
         fullCode = code1 + code2 +  code3 + code4;
@@ -204,15 +208,17 @@ public class VaultLockPuzzle : MonoBehaviour
             puzzleManager.VaultPuzzleComplete();
             animator.SetBool("DoorOpen", true);
         }
-        else
-        {
-            fullCode = null;
-            code1 = null;
-            code2 = null;
-            code3 = null;
-            code4 = null;
+        // else
+        // {
 
-            Debug.Log(code1);
-        }
+
+        //     Debug.Log(code1);
+        // }
+        fullCode = null;
+        code1 = null;
+        code2 = null;
+        code3 = null;
+        code4 = null;
+
     }
 }
