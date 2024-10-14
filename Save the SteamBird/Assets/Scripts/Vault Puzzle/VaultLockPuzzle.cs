@@ -131,8 +131,6 @@ public class VaultLockPuzzle : MonoBehaviour
             if(Input.GetMouseButtonDown(1))
             {
 
-                Debug.Log(currentCodePiece);
-
                 if(code4 == null && code3 != null)
                 {
                     code4 = currentCodePiece.ToString();
@@ -152,8 +150,11 @@ public class VaultLockPuzzle : MonoBehaviour
 
                 if(code1 == null)
                 {
+                    Debug.Log("isNull");
                     code1 = currentCodePiece.ToString();
                 }
+
+                Debug.Log(currentCodePiece);
             }
         }
         
@@ -210,6 +211,8 @@ public class VaultLockPuzzle : MonoBehaviour
             code2 = null;
             code3 = null;
             code4 = null;
+
+            Debug.Log(code1);
         }
     }
 }
