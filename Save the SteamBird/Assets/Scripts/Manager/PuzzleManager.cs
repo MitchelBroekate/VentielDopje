@@ -47,8 +47,8 @@ public class PuzzleManager : MonoBehaviour
     #region BirdParts Vars
     [Header("BirdPartVars")]
     [SerializeField] Timer timer;
-    [SerializeField] Transform bird1, bird2, bird3;
-    [SerializeField] Transform birdspawn1, birdspawn2, birdspawn3;
+    [SerializeField] Transform bird1, bird2, bird3, bird4;
+    [SerializeField] Transform birdspawn1, birdspawn2, birdspawn3, birdspawn4;
     #endregion
 
     #region Player
@@ -276,6 +276,7 @@ public class PuzzleManager : MonoBehaviour
 
     public void PipeRotateCompletion()
     {
+        bird4.position = birdspawn4.position;
         Debug.Log($"<color=#2d43ed>Pipe Rotate Complete!!!</color>");
     }
 }

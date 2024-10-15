@@ -9,7 +9,7 @@ public class PipeRotateIneractable : MonoBehaviour
     {
         transform.Rotate(0,90,0);
 
-        if(rotateValue < 4)
+        if(rotateValue < 3)
         {
             rotateValue++;
         }
