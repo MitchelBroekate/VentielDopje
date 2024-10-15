@@ -273,4 +273,9 @@ public class PuzzleManager : MonoBehaviour
         playerCanvas.SetActive(false);
         winCanvas.SetActive(true);
     }
+
+    public void PipeRotateCompletion()
+    {
+        Debug.Log($"<color=#2d43ed>Pipe Rotate Complete!!!</color>");
+    }
 }

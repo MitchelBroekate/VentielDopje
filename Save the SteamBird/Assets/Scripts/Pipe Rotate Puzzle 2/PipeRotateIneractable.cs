@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class PipeRotateIneractable : MonoBehaviour
 {
-    int rotateValue;
+    public int rotateValue = 0;
     public void RotatePipe()
     {
         transform.Rotate(0,90,0);
-        rotateValue++;
+
+        if(rotateValue < 4)
+        {
+            rotateValue++;
+        }
+        else
+        {
+            rotateValue = 0;
+        }
     }
 }
