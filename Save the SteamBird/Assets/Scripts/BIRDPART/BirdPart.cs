@@ -15,6 +15,7 @@ public class BirdPart : MonoBehaviour
     public GameObject bird1Object;
     public GameObject bird2Object;
     public GameObject bird3Object;
+    public GameObject bird4Object;
     #endregion
 
     #region BirdObjective
@@ -22,10 +23,7 @@ public class BirdPart : MonoBehaviour
     public GameObject birdObjective1;
     public GameObject birdObjective2;
     public GameObject birdObjective3;
-
-    bool part1InObjective;
-    bool part2InObjective;
-    bool part3InObjective;
+    public GameObject birdObjective4;
 
     int birdPartsPlaced = 0;
     #endregion
@@ -75,6 +73,19 @@ public class BirdPart : MonoBehaviour
                 interaction.invetoryFull = false;
                 interaction.birdPartInInventory = 0;
             }
+
+            else if(interaction.birdPartInInventory == 4)
+            {
+                bird4Object.transform.parent = transform;
+                bird4Object.transform.position = birdObjective4.transform.position;
+                bird4Object.transform.rotation = birdObjective4.transform.rotation;
+                bird4Object.GetComponent<BirdInteraction>().inObjective = true;
+
+                EndGame();
+
+                interaction.invetoryFull = false;
+                interaction.birdPartInInventory = 0;
+            }
         }
     }
 
@@ -85,7 +96,7 @@ public class BirdPart : MonoBehaviour
     {
         birdPartsPlaced++;
 
-        if(birdPartsPlaced > 2)
+        if(birdPartsPlaced > 3)
         {
             puzzleManager.BirdPartsRestored();
         }
