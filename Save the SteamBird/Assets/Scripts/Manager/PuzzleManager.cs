@@ -46,16 +46,8 @@ public class PuzzleManager : MonoBehaviour
 
     #region BirdParts Vars
     [Header("BirdPartVars")]
-    [SerializeField] Timer timer;
     [SerializeField] Transform bird1, bird2, bird3, bird4;
     [SerializeField] Transform birdspawn1, birdspawn2, birdspawn3, birdspawn4;
-    #endregion
-
-    #region Player
-    [Header("PlayerVars")]
-    [SerializeField] PlayerControls playerControls;
-    [SerializeField] Transform player;
-    [SerializeField] GameObject playerCanvas;
     #endregion
 
     #region CogWorkbench
@@ -65,8 +57,10 @@ public class PuzzleManager : MonoBehaviour
     bool allowWorkbenchMove;
     #endregion
 
-    [Header("WinCanvas")]
-    [SerializeField] GameObject winCanvas;
+    [Header("Win")]
+    #region Win
+    public bool gameWon;
+    #endregion
 
     /// <summary>
     /// This function activates the CogRandomSpawn and SetVaultCodeTime at the start of the game
@@ -262,21 +256,15 @@ public class PuzzleManager : MonoBehaviour
     /// <summary>
     /// This function activates the win condition and stops the timer
     /// </summary>
-    public void BirdPartsRestored()
-    {
-        Debug.Log($"<color=#8d28ed>You Beat The Game!!!</color>");
-
-        timer.timerIsRunning = false;
-        Cursor.lockState = CursorLockMode.None;
-        playerControls.winMovement = true;
-        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        playerCanvas.SetActive(false);
-        winCanvas.SetActive(true);
-    }
 
     public void PipeRotateCompletion()
     {
         bird4.position = birdspawn4.position;
         Debug.Log($"<color=#2d43ed>Pipe Rotate Complete!!!</color>");
+    }
+    public void BirdPartsRestored()
+    {
+        Debug.Log($"<color=#8d28ed>You Beat The Game!!!</color>");
+        gameWon = true;
     }
 }
