@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Timer : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        timerIsRunning = true;
+        StartCoroutine(StartTimer());
     }
 
     /// <summary>
@@ -96,5 +97,11 @@ public class Timer : MonoBehaviour
 
         secondTens.text = secondTensValue.ToString();
         secondOnes.text = secondOnesValue.ToString();
+    }
+
+    IEnumerator StartTimer()
+    {
+        yield return new WaitForSeconds(38);
+        timerIsRunning = true;
     }
 }
