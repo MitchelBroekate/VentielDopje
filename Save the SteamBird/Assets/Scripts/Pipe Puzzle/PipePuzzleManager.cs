@@ -25,6 +25,7 @@ public class PipePuzzleManager : MonoBehaviour
     
     #region CompletionLock
     public bool completionLock;
+    public AudioSource pipeAudio;
     #endregion
 
 
@@ -34,6 +35,7 @@ public class PipePuzzleManager : MonoBehaviour
     void Start()
     {
         RandomPipeSelector();
+        pipeAudio.pitch = 1f;
     }
 
     /// <summary>
@@ -58,6 +60,8 @@ public class PipePuzzleManager : MonoBehaviour
             }
             else
             {
+                pipeAudio.pitch += 0.3f;
+
                 airVent1.GetChild(0).gameObject.SetActive(false);
                 airVent2.GetChild(0).gameObject.SetActive(false);
                 airVent3.GetChild(0).gameObject.SetActive(false);
@@ -102,6 +106,8 @@ public class PipePuzzleManager : MonoBehaviour
         FixableAirvent = 0;
 
         RandomPipeSelector();
+
+        pipeAudio.pitch = 1f;
     }
 
     /// <summary>
@@ -116,5 +122,6 @@ public class PipePuzzleManager : MonoBehaviour
         airVent5.GetChild(0).gameObject.SetActive(false);
 
         puzzleManager.PipePuzzleComplete();
+        pipeAudio.mute = true;
     }
 }
