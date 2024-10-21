@@ -9,12 +9,12 @@ public class DoorInteraction : MonoBehaviour
     bool coroutineActive;
 
     public PuzzleManager puzzleManager;
+    public UIFade uIFade;
     public Timer timer;
     public PlayerControls playerControls;
 
     public GameObject player;
     public GameObject playerCanvas;
-    public GameObject winCanvas;
     void Update()
     {
         if (coroutineActive) 
@@ -34,12 +34,12 @@ public class DoorInteraction : MonoBehaviour
         }
         else
         {
+            uIFade.canFade = true;
             timer.timerIsRunning = false;
             Cursor.lockState = CursorLockMode.None;
             playerControls.winMovement = true;
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             playerCanvas.SetActive(false);
-            winCanvas.SetActive(true);
         }
 
     }
@@ -47,20 +47,28 @@ public class DoorInteraction : MonoBehaviour
     IEnumerator DoorWiggle()
     {
         coroutineActive = true;
-        doorRotate.Rotate(0, 0, 20);
-        yield return new WaitForSeconds(0.25f);
+        doorRotate.Rotate(0, 0, 100);
+        yield return new WaitForSeconds(0.5f);
 
-        doorRotate.Rotate(0, 0, -30);
-        yield return new WaitForSeconds(0.25f);
+        coroutineActive = false;
+        coroutineActive = true;
+        doorRotate.Rotate(0, 0, -200);
+        yield return new WaitForSeconds(0.5f);
 
-        doorRotate.Rotate(0, 0, 20);
-        yield return new WaitForSeconds(0.25f);
+        coroutineActive = false;
+        coroutineActive = true;
+        doorRotate.Rotate(0, 0, 100);
+        yield return new WaitForSeconds(0.5f);
 
-        doorRotate.Rotate(0, 0, -30);
-        yield return new WaitForSeconds(0.25f);
+        coroutineActive = false;
+        coroutineActive = true;
+        doorRotate.Rotate(0, 0, -200);
+        yield return new WaitForSeconds(0.5f);
 
-        doorRotate.Rotate(0, 0, 20);
-        yield return new WaitForSeconds(0.25f);
+        coroutineActive = false;
+        coroutineActive = true;
+        doorRotate.Rotate(0, 0, 100);
+        yield return new WaitForSeconds(0.5f);
 
         coroutineActive = false;
         StopAllCoroutines();
