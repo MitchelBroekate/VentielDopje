@@ -8,6 +8,8 @@ public class PipeRotateIneractable : MonoBehaviour
     public Transform rotateObject;
     public int rotateStart;
 
+    public bool puzzleComplete;
+
     void Start()
     {
         rotateObject.rotation = Quaternion.Euler(rotateStart, 0, -90);
@@ -19,15 +21,19 @@ public class PipeRotateIneractable : MonoBehaviour
     }
     public void RotatePipe()
     {
-        rotateObject.Rotate(0,90,0);
+        if(!puzzleComplete)
+        {
+            rotateObject.Rotate(0,90,0);
 
-        if(rotateValue < 3)
-        {
-            rotateValue++;
+            if(rotateValue < 3)
+            {
+                rotateValue++;
+            }
+            else
+            {
+                rotateValue = 0;
+            }
         }
-        else
-        {
-            rotateValue = 0;
-        }
+
     }
 }

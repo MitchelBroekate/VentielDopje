@@ -57,6 +57,14 @@ public class PuzzleManager : MonoBehaviour
     bool allowWorkbenchMove;
     #endregion
 
+    #region PipeRotate
+    [Header("PipeRotate")]
+    [SerializeField] ParticleSystem rotatePipeSteam1;
+    [SerializeField] ParticleSystem rotatePipeSteam2;
+    [SerializeField] ParticleSystem rotatePipeSteam3;
+    [SerializeField] AudioSource steamAudio;
+    #endregion
+
     [Header("Win")]
     #region Win
     public bool gameWon;
@@ -259,12 +267,28 @@ public class PuzzleManager : MonoBehaviour
 
     public void PipeRotateCompletion()
     {
-        bird4.position = birdspawn4.position;
-        Debug.Log($"<color=#2d43ed>Pipe Rotate Complete!!!</color>");
+        StartCoroutine(PipeRotateWait());
     }
     public void BirdPartsRestored()
     {
         Debug.Log($"<color=#8d28ed>You Beat The Game!!!</color>");
         gameWon = true;
+    }
+
+    IEnumerator PipeRotateWait()
+    {
+        yield return new WaitForSeconds(4);
+
+        rotatePipeSteam1.Play();
+        rotatePipeSteam2.Play();
+        rotatePipeSteam3.Play();
+        steamAudio.Play();
+
+        bird4.position = birdspawn4.position;
+        Debug.Log($"<color=#2d43ed>Pipe Rotate Complete!!!</color>");
+
+        yield return new WaitForSeconds(5);
+
+        steamAudio.Stop();
     }
 }
