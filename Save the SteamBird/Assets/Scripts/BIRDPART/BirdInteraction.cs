@@ -8,7 +8,7 @@ public class BirdInteraction : MonoBehaviour
     public GameObject playerParent;
     public Transform birdPartCarryPos;
     public bool inObjective;
-
+    public GameObject particle;
     public int birdPart;
     #endregion
 
@@ -23,6 +23,7 @@ public class BirdInteraction : MonoBehaviour
         transform.rotation = birdPartCarryPos.rotation;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<BoxCollider>().enabled = false;
+        particle.SetActive(false);
 
     }
 }

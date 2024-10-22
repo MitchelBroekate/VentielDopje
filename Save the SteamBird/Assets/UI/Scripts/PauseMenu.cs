@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -20,9 +22,24 @@ public class PauseMenu : MonoBehaviour
     {
         pause.SetActive(false);
         Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
     }
 
+    public void Pause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("joe");
+            if (pause.activeInHierarchy == true)
+            {
+                HidePause();
+            }
+            else
+            {
+                ShowPause();
+            }
+        }
+    }
 }

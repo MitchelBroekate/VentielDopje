@@ -8,7 +8,7 @@ public class CogInteract : MonoBehaviour
     public bool inObjective;
     public GameObject currentCog;
     public bool inInventory;
-
+    public GameObject particle;
     public int cog;
     #endregion
 
@@ -24,5 +24,6 @@ public class CogInteract : MonoBehaviour
         transform.rotation = cogCarryPos.rotation;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<BoxCollider>().enabled = false;
+        particle.SetActive(false);
     }
 }

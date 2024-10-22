@@ -145,6 +145,7 @@ public class PlayerControls : MonoBehaviour
                         pickUpChild.parent = null;
                         pickUpChild.GetComponent<Rigidbody>().isKinematic = false;
                         pickUpChild.GetComponent<BoxCollider>().enabled = true;
+                        pickUpChild.GetChild(0).gameObject.SetActive(true);
 
                         interaction.invetoryFull = false;                        
                         invetoryFull = false;
@@ -155,6 +156,7 @@ public class PlayerControls : MonoBehaviour
                         pickUpChild.parent = null;
                         pickUpChild.GetComponent<Rigidbody>().isKinematic = false;
                         pickUpChild.GetComponent<BoxCollider>().enabled = true;
+                        pickUpChild.GetChild(0).gameObject.SetActive(true);
 
                         interaction.invetoryFull = false;                        
                         invetoryFull = false;
