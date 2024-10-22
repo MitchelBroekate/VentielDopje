@@ -140,7 +140,7 @@ public class VaultLockPuzzle : MonoBehaviour
     {
         if(vaultCam.activeInHierarchy == true)
         {
-            if(Input.GetMouseButtonDown(1))
+            if(Input.GetMouseButtonDown(0))
             {
                 audioSource.clip = vaultSelect;
                 audioSource.Play();
@@ -191,7 +191,7 @@ public class VaultLockPuzzle : MonoBehaviour
     /// </summary>
     void SwitchCamsVault()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(1))
         {
 
 

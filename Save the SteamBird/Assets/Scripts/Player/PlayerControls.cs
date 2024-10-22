@@ -140,7 +140,17 @@ public class PlayerControls : MonoBehaviour
             {
                 Transform pickUpChild = cam.GetChild(1).transform;
 
-                    if (pickUpChild.tag == "COG" || pickUpChild.tag == "BIRDPART")
+                    if (pickUpChild.tag == "COG")
+                    {
+                        pickUpChild.parent = null;
+                        pickUpChild.GetComponent<Rigidbody>().isKinematic = false;
+                        pickUpChild.GetComponent<BoxCollider>().enabled = true;
+
+                        interaction.invetoryFull = false;                        
+                        invetoryFull = false;
+                    }
+
+                    else if (pickUpChild.tag == "BIRDPART")
                     {
                         pickUpChild.parent = null;
                         pickUpChild.GetComponent<Rigidbody>().isKinematic = false;

@@ -28,6 +28,12 @@ public class BirdPart : MonoBehaviour
     int birdPartsPlaced = 0;
     #endregion
 
+    #region Player
+    [Header("Player")]
+    public Transform playerParent;
+    public Transform birdCarryPos;
+    #endregion
+
     /// <summary>
     /// This function allows the player to insert a Birdpart into the bird and checks for when all the parts are inserted
     /// </summary>
@@ -101,5 +107,16 @@ public class BirdPart : MonoBehaviour
             puzzleManager.BirdPartsRestored();
         }
 
+    }
+
+    public void BirdGrab()
+    {
+        if(birdPartsPlaced > 3)
+        {
+            transform.parent = playerParent.transform;
+            transform.position = birdCarryPos.position;
+            transform.rotation = birdCarryPos.rotation;
+            GetComponent<BoxCollider>().enabled = false;
+        }
     }
 }
