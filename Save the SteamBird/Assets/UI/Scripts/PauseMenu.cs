@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
 {
 
     public GameObject pause;
+    public AudioSource steam;
+    public AudioSource bird;
+    
         
     public void ShowPause()
     {
@@ -15,6 +18,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        steam.Pause();
 
     }
 
@@ -24,7 +28,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        steam.UnPause();
     }
 
     public void Pause(InputAction.CallbackContext context)
