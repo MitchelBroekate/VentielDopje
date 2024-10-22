@@ -31,6 +31,14 @@ public class PlayerControls : MonoBehaviour
     public bool winMovement;
     #endregion
 
+    #region SFX
+    [Header("SFX")]
+    public AudioSource playerSource;
+    public AudioClip walkClip;
+
+    #endregion
+
+
     /// <summary>
     /// The Start function gets the ridgedbody component
     /// </summary>
@@ -61,6 +69,17 @@ public class PlayerControls : MonoBehaviour
     {
         Vector3 playerV = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.y * moveSpeed);
         rb.velocity = transform.TransformDirection(playerV);
+        if(rb.velocity != Vector3.zero)
+        {
+            playerSource.clip = walkClip;
+            playerSource.loop = true;
+            playerSource.Play();
+        }
+        else
+        {
+            playerSource.Stop();
+            playerSource.loop = false;
+        }
     } 
 
     /// <summary>
