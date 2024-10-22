@@ -54,6 +54,15 @@ public class VaultLockPuzzle : MonoBehaviour
     public Transform rotateAngle;
     #endregion
 
+    #region SFX
+    [Header("SFX")]
+    public AudioSource audioSource;
+    public AudioClip vaultRotate;
+    public AudioClip vaultOpen;
+    public AudioClip vaultSelect;
+    public AudioClip vaultReset;
+    #endregion
+
     /// <summary>
     /// This function updates the cam switcher, check if you can switch cams and updates the vault code selector
     /// </summary>
@@ -86,7 +95,8 @@ public class VaultLockPuzzle : MonoBehaviour
         {
             rotateAngle.Rotate(0, 0, 36);
 
-            
+            audioSource.clip = vaultRotate;
+            audioSource.Play();
 
             if(currentCodePiece >0)
             {
@@ -109,7 +119,8 @@ public class VaultLockPuzzle : MonoBehaviour
         {
             rotateAngle.Rotate(0, 0, -36);
 
-            
+            audioSource.clip = vaultRotate;
+            audioSource.Play();
 
             if(currentCodePiece < 9)
             {
@@ -131,6 +142,9 @@ public class VaultLockPuzzle : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(1))
             {
+                audioSource.clip = vaultSelect;
+                audioSource.Play();
+
                 if(!canInputCode) canInputCode = true;
 
                 if(code4 == null && code3 != null)
@@ -179,6 +193,8 @@ public class VaultLockPuzzle : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
+
+
             if(vaultCam.activeInHierarchy == true)
             {
                 vaultCam.SetActive(false);
@@ -207,13 +223,15 @@ public class VaultLockPuzzle : MonoBehaviour
         {
             puzzleManager.VaultPuzzleComplete();
             animator.SetBool("DoorOpen", true);
+
+            audioSource.clip = vaultOpen;
+            audioSource.Play();
         }
-        // else
-        // {
-
-
-        //     Debug.Log(code1);
-        // }
+        else
+        {
+            audioSource.clip = vaultReset;
+            audioSource.Play();
+        }
         fullCode = null;
         code1 = null;
         code2 = null;
