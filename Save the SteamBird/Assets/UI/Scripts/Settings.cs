@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 using UnityEngine.UI;  
 
 public class Settings : MonoBehaviour
@@ -19,13 +21,17 @@ public class Settings : MonoBehaviour
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
 
+    public Volume volume;
+    public Slider gammaSlider;
+    public LiftGammaGain liftGammaGain;
+
 
     [System.Obsolete]
     public void Start()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
-
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        gammaSlider.value = PlayerPrefs.GetFloat("Gamma");
 
         resolutions = Screen.resolutions;
         filteredResolution = new List<Resolution>();
@@ -56,6 +62,13 @@ public class Settings : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        if (volume.profile.TryGet(out liftGammaGain))
+        {
+
+            gammaSlider.value = liftGammaGain.gamma.value.w;
+            gammaSlider.onValueChanged.AddListener(UpdateGamma);
+        }
     }
 
 
@@ -79,6 +92,20 @@ public class Settings : MonoBehaviour
     {
         audioMixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("SFXVolume", sliderValue);
+    }
+
+    public void UpdateGamma(float sliderValue)
+    {
+        PlayerPrefs.SetFloat("Gamma", sliderValue);
+
+        if (liftGammaGain != null)
+        {
+
+            Vector4 gamma = liftGammaGain.gamma.value;
+            gamma.w = sliderValue;
+            liftGammaGain.gamma.value = gamma;
+            
+        }
     }
 
 
