@@ -30,6 +30,8 @@ public class PipeInteractable : MonoBehaviour
         else
         {
             pipePuzzleManager.PipePuzzleReset();
+            
+            rotateObject.transform.Rotate(0, 180, 0);
         }
     }
 }
