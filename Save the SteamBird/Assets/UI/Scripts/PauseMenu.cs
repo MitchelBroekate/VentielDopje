@@ -8,6 +8,10 @@ public class PauseMenu : MonoBehaviour
 {
 
     public GameObject pause;
+    public GameObject pauseSetting;
+    public GameObject playerCanvas;
+    public GameObject vaultCanvas;
+    public GameObject mainPlayer;
    
     
         
@@ -17,7 +21,16 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        
+
+        if (mainPlayer.activeInHierarchy == true)
+        {
+            playerCanvas.SetActive(false);
+        }
+        else
+        {
+            vaultCanvas.SetActive(false);
+        }
+
 
         AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
@@ -34,7 +47,15 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+
+       if(mainPlayer.activeInHierarchy == false)
+        {
+            playerCanvas.SetActive(true);
+        }
+        else
+        {
+            vaultCanvas.SetActive(true);
+        }
 
         AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
@@ -49,13 +70,11 @@ public class PauseMenu : MonoBehaviour
         if (context.performed)
         {
             
-            if (pause.activeInHierarchy == true)
-            {
-                HidePause();
-            }
-            else
+          
+            if(pause.activeInHierarchy == false && pauseSetting.activeInHierarchy == false)
             {
                 ShowPause();
+
             }
         }
     }
