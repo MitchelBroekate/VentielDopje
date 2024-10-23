@@ -55,6 +55,8 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] Transform workbench;
     [SerializeField] Transform moveLocation;
     bool allowWorkbenchMove;
+
+    [SerializeField] AudioSource workbenchAudio;
     #endregion
 
     #region PipeRotate
@@ -107,6 +109,8 @@ public class PuzzleManager : MonoBehaviour
             bird1.transform.position = birdspawn1.position;
 
             allowWorkbenchMove = true;
+
+            workbenchAudio.Play();
         }
     }
 
