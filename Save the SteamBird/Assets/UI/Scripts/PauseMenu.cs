@@ -40,7 +40,7 @@ public class PauseMenu : MonoBehaviour
 
         foreach ( AudioSource a in audios)
         {
-            a.Play();
+            a.UnPause();
         }
     }
 
