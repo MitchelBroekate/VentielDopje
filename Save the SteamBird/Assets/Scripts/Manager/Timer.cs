@@ -32,6 +32,13 @@ public class Timer : MonoBehaviour
     public bool timerIsRunning = false;
     #endregion
 
+    #region SFX
+    [Header("SFX")]
+    public AudioSource audioSource;
+    public AudioClip twoMinute;
+    public AudioClip fiveMinute;
+    #endregion
+
     void Start()
     {
         StartCoroutine(StartTimer());
@@ -49,6 +56,19 @@ public class Timer : MonoBehaviour
                 timeRemaining -= Time.deltaTime;
                 UpdateTimerDisplay(timeRemaining);
             }
+
+            else if(timeRemaining == 300)
+            {
+                audioSource.clip = fiveMinute;
+                audioSource.Play();
+            }
+
+            else if(timeRemaining == 120)
+            {
+                audioSource.clip = twoMinute;
+                audioSource.Play();
+            }
+
             else
             {
                 timeRemaining = 0;

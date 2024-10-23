@@ -34,6 +34,15 @@ public class BirdPart : MonoBehaviour
     public Transform birdCarryPos;
     #endregion
 
+    #region SFX
+    [Header("SFX")]
+    public AudioSource audioSource;
+    public AudioClip birdpartplace1;
+    public AudioClip birdpartplace2;
+    public AudioClip birdpartplace3;
+    public AudioClip birdpartplace4;
+    #endregion
+
     /// <summary>
     /// This function allows the player to insert a Birdpart into the bird and checks for when all the parts are inserted
     /// </summary>
@@ -102,9 +111,29 @@ public class BirdPart : MonoBehaviour
     {
         birdPartsPlaced++;
 
+        if(birdPartsPlaced == 1)
+        {
+            audioSource.clip = birdpartplace1;
+            audioSource.Play();
+        }
+
+        if(birdPartsPlaced == 2)
+        {
+            audioSource.clip = birdpartplace2;
+            audioSource.Play();
+        }
+
+        if(birdPartsPlaced == 3)
+        {
+            audioSource.clip = birdpartplace3;
+            audioSource.Play();
+        }
+
         if(birdPartsPlaced > 3)
         {
             puzzleManager.BirdPartsRestored();
+            audioSource.clip = birdpartplace4;
+            audioSource.Play();
         }
 
     }

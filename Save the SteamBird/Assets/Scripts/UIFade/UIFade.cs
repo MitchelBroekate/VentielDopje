@@ -7,6 +7,7 @@ public class UIFade : MonoBehaviour
     public CanvasGroup fadeCanvas;
     public bool canFade;
     public GameObject winCanvas;
+    public GameObject fadeScreen;
 
     void Start()
     {
@@ -17,8 +18,10 @@ public class UIFade : MonoBehaviour
     {
         if(canFade)
         {
+
             if(fadeCanvas.alpha < 1)
             {
+                fadeScreen.SetActive(true);
                 fadeCanvas.alpha += 0.3f * Time.deltaTime;
             }
             else if(fadeCanvas.alpha >= 1)

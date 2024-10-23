@@ -2323,7 +2323,7 @@ MonoBehaviour:
   inObjective: 0
   currentCog: {fileID: 110872313}
   inInventory: 0
-  particle: {fileID: 0}
+  particle: {fileID: 1546614353}
   cog: 4
 --- !u!54 &110872320
 Rigidbody:
@@ -10833,6 +10833,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1805977fcc80494d860ebc7ae1717e4, type: 3}
+--- !u!82 &481417884 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3782181086514996306, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1960167424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &481417886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1960167424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12dea23e36566564a8857fcb1be6d381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &487279899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11089,6 +11107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Feet_L
       objectReference: {fileID: 0}
+    - target: {fileID: 4597072592754884485, guid: 7ea6eaafe934cfc42ae97cbc9045de8b,
+        type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 1352945354}
     - target: {fileID: 4597072592754884485, guid: 7ea6eaafe934cfc42ae97cbc9045de8b,
         type: 3}
       propertyPath: playerParent
@@ -18161,29 +18184,13 @@ GameObject:
   - component: {fileID: 722030344}
   - component: {fileID: 722030343}
   - component: {fileID: 722030342}
-  - component: {fileID: 722030341}
   m_Layer: 5
   m_Name: FadeToBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &722030341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722030340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d51870742c27ad468110e7cbaf26ac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeCanvas: {fileID: 722030344}
-  canFade: 0
-  winCanvas: {fileID: 800638977}
+  m_IsActive: 0
 --- !u!114 &722030342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19400,7 +19407,7 @@ MonoBehaviour:
   inObjective: 0
   currentCog: {fileID: 831211062}
   inInventory: 0
-  particle: {fileID: 0}
+  particle: {fileID: 1186331672}
   cog: 1
 --- !u!54 &831211069
 Rigidbody:
@@ -36834,6 +36841,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2071105713}
+    - targetCorrespondingSourceObject: {fileID: 7732385005730816675, guid: 254c7d5372e4c6c4cba01449087c7813,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2071105715}
   m_SourcePrefab: {fileID: 100100000, guid: 254c7d5372e4c6c4cba01449087c7813, type: 3}
 --- !u!1 &1352945354
 GameObject:
@@ -48969,7 +48980,7 @@ MonoBehaviour:
   inObjective: 0
   currentCog: {fileID: 1465682760}
   inInventory: 0
-  particle: {fileID: 0}
+  particle: {fileID: 140692502}
   cog: 2
 --- !u!54 &1465682767
 Rigidbody:
@@ -50175,7 +50186,7 @@ MonoBehaviour:
   inObjective: 0
   currentCog: {fileID: 1505541598}
   inInventory: 0
-  particle: {fileID: 0}
+  particle: {fileID: 1378077734}
   cog: 3
 --- !u!54 &1505541605
 Rigidbody:
@@ -55919,6 +55930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8569666915143165263, guid: 0c280c20c4512cb42abe2ba7cfca3c85,
         type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 875580730}
+    - target: {fileID: 8569666915143165263, guid: 0c280c20c4512cb42abe2ba7cfca3c85,
+        type: 3}
       propertyPath: playerParent
       value: 
       objectReference: {fileID: 792156548}
@@ -56350,9 +56366,24 @@ PrefabInstance:
       objectReference: {fileID: 1487407102}
     - target: {fileID: 5447296186438755984, guid: 33a36450a589e504d9e68cfb0f9a756d,
         type: 3}
+      propertyPath: twoMinute
+      value: 
+      objectReference: {fileID: 8300000, guid: 055806a8099e810468197e17b2c639a3, type: 3}
+    - target: {fileID: 5447296186438755984, guid: 33a36450a589e504d9e68cfb0f9a756d,
+        type: 3}
+      propertyPath: fiveMinute
+      value: 
+      objectReference: {fileID: 8300000, guid: 99dcc4e3f9320d4458e980680af73807, type: 3}
+    - target: {fileID: 5447296186438755984, guid: 33a36450a589e504d9e68cfb0f9a756d,
+        type: 3}
       propertyPath: loseCanvas
       value: 
       objectReference: {fileID: 800638976}
+    - target: {fileID: 5447296186438755984, guid: 33a36450a589e504d9e68cfb0f9a756d,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 481417884}
     - target: {fileID: 5447296186438755984, guid: 33a36450a589e504d9e68cfb0f9a756d,
         type: 3}
       propertyPath: playerCanvas
@@ -64645,7 +64676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorRotate: {fileID: 585808889}
   puzzleManager: {fileID: 1726922969}
-  uIFade: {fileID: 722030341}
+  uIFade: {fileID: 0}
   timer: {fileID: 545613364}
   playerControls: {fileID: 1487407103}
   player: {fileID: 1487407101}
@@ -67316,6 +67347,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4933038552107007530, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981922646693476511, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981922646693476511, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981922646693476511, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 481417886}
+    - target: {fileID: 5981922646693476511, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981922646693476511, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: BirdGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981922646693476511, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BirdPart, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981922646693476511, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 481417884}
     - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
         type: 3}
       propertyPath: bird1Object
@@ -67343,13 +67419,53 @@ PrefabInstance:
       objectReference: {fileID: 908641007}
     - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
         type: 3}
+      propertyPath: birdCarryPos
+      value: 
+      objectReference: {fileID: 39638385}
+    - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: playerParent
+      value: 
+      objectReference: {fileID: 1487407102}
+    - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1726922969}
+    - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: birdpartplace1
+      value: 
+      objectReference: {fileID: 8300000, guid: ec877c7b0cac1d646ac26c95aeaa6bfd, type: 3}
+    - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: birdpartplace2
+      value: 
+      objectReference: {fileID: 8300000, guid: 01c1c407597ee2d4f94d0068a08c0d5f, type: 3}
+    - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: birdpartplace3
+      value: 
+      objectReference: {fileID: 8300000, guid: 524b8cb13afa5fc4c889aaa2276bbb90, type: 3}
+    - target: {fileID: 6202947078445011864, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: birdpartplace4
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c213fd989635284d8c18a04d9e0ff00, type: 3}
     - target: {fileID: 6601405294325004857, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
         type: 3}
       propertyPath: m_Name
       value: steam bird (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601405294325004857, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759661538492842683, guid: 29e69d83633ef2e4e9faa65ae636d3e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68132,6 +68248,22 @@ MonoBehaviour:
   birdpart3: {fileID: 488653338}
   birdpart4: {fileID: 7412242999567524603}
   timer: {fileID: 545613364}
+--- !u!114 &2071105715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071105711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d51870742c27ad468110e7cbaf26ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeCanvas: {fileID: 722030344}
+  canFade: 0
+  winCanvas: {fileID: 800638977}
+  fadeScreen: {fileID: 722030340}
 --- !u!4 &2085747473 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1498442599339165194, guid: 749f245fd304f1546a6c955005b717b0,
@@ -73320,7 +73452,7 @@ MonoBehaviour:
   playerParent: {fileID: 792156548}
   birdPartCarryPos: {fileID: 39638385}
   inObjective: 0
-  particle: {fileID: 0}
+  particle: {fileID: 1813774181}
   birdPart: 3
 --- !u!54 &8054762426664430060
 Rigidbody:
@@ -73734,7 +73866,7 @@ MonoBehaviour:
   playerParent: {fileID: 792156548}
   birdPartCarryPos: {fileID: 39638385}
   inObjective: 0
-  particle: {fileID: 0}
+  particle: {fileID: 606164982}
   birdPart: 2
 --- !u!54 &8826066702301543538
 Rigidbody:
@@ -73859,6 +73991,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 832575519}
+  - {fileID: 1851982967}
   - {fileID: 1324461941}
   - {fileID: 908641006}
   - {fileID: 1899136666}
@@ -73869,7 +74002,6 @@ SceneRoots:
   - {fileID: 1841465264}
   - {fileID: 906795734}
   - {fileID: 1892153428}
-  - {fileID: 1851982967}
   - {fileID: 1100488882704039296}
   - {fileID: 800638975}
   - {fileID: 2116063799}
