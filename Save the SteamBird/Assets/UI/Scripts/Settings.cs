@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
+using UnityEngine.UI;  
 
 public class Settings : MonoBehaviour
 {
@@ -18,6 +18,7 @@ public class Settings : MonoBehaviour
     private List<Resolution> filteredResolution;
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
+
 
     [System.Obsolete]
     public void Start()
@@ -56,6 +57,10 @@ public class Settings : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
+
+
+ 
+
 
     public void SetResolution(int resolutionIndex)
     {
