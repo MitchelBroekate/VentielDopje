@@ -11341,6 +11341,7 @@ MonoBehaviour:
   birdpart3: {fileID: 488653338}
   birdpart4: {fileID: 7412242999567524603}
   timer: {fileID: 545613364}
+  interaction: {fileID: 908641007}
 --- !u!4 &2085747473 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1498442599339165194, guid: 749f245fd304f1546a6c955005b717b0,

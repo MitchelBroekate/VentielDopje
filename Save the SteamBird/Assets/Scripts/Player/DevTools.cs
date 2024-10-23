@@ -7,6 +7,7 @@ public class DevTools : MonoBehaviour
     public Transform birdpart1, birdpart2, birdpart3, birdpart4;
 
     public Timer timer;
+    public Interaction interaction;
 
 
     void Update()
@@ -22,6 +23,11 @@ public class DevTools : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             timer.timeRemaining = 1;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            interaction.IntroCheck = true;
         }
     }
 }
