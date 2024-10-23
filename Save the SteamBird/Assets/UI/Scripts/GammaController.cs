@@ -11,7 +11,8 @@ public class GammaController : MonoBehaviour
    
     void Start()
     {
-        
+        gammaSlider.value = PlayerPrefs.GetFloat("Gamma", 1f);
+
         if (volume.profile.TryGet(out liftGammaGain))
         {
            
@@ -20,16 +21,20 @@ public class GammaController : MonoBehaviour
         }
     }
 
-    
-    public void UpdateGamma(float value)
+
+    public void UpdateGamma(float sliderValue)
     {
+
+
         if (liftGammaGain != null)
         {
 
+            PlayerPrefs.SetFloat("Gamma", sliderValue);
             Vector4 gamma = liftGammaGain.gamma.value;
-            gamma.w = value; 
+            gamma.w = sliderValue;
             liftGammaGain.gamma.value = gamma;
-            print(gamma);
+
         }
+
     }
 }

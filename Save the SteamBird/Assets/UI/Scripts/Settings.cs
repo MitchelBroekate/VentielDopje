@@ -29,10 +29,9 @@ public class Settings : MonoBehaviour
     [System.Obsolete]
     public void Start()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-        gammaSlider.value = PlayerPrefs.GetFloat("Gamma");
-
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+    
         resolutions = Screen.resolutions;
         filteredResolution = new List<Resolution>();
 
@@ -63,15 +62,24 @@ public class Settings : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
+       
+
+        float savedGamma = PlayerPrefs.GetFloat("Gamma", 1f);
+        gammaSlider.value = savedGamma;
+
         if (volume.profile.TryGet(out liftGammaGain))
         {
+            
+            Vector4 gamma = liftGammaGain.gamma.value;
+            gamma.w = savedGamma; 
+            liftGammaGain.gamma.value = gamma;
 
-            gammaSlider.value = liftGammaGain.gamma.value.w;
+           
             gammaSlider.onValueChanged.AddListener(UpdateGamma);
+
         }
+
     }
-
-
  
 
 
@@ -96,16 +104,18 @@ public class Settings : MonoBehaviour
 
     public void UpdateGamma(float sliderValue)
     {
-        PlayerPrefs.SetFloat("Gamma", sliderValue);
+       
 
         if (liftGammaGain != null)
         {
 
+            PlayerPrefs.SetFloat("Gamma", sliderValue);
             Vector4 gamma = liftGammaGain.gamma.value;
             gamma.w = sliderValue;
             liftGammaGain.gamma.value = gamma;
             
         }
+
     }
 
 
