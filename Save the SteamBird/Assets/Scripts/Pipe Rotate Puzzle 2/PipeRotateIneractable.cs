@@ -9,6 +9,7 @@ public class PipeRotateIneractable : MonoBehaviour
     public int rotateStart;
 
     public bool puzzleComplete;
+    bool cooldown;
 
     void Start()
     {
@@ -17,23 +18,36 @@ public class PipeRotateIneractable : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotateObject.rotation, 1 * Time.deltaTime);    
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotateObject.rotation, 1 * Time.deltaTime); 
     }
     public void RotatePipe()
     {
         if(!puzzleComplete)
         {
-            rotateObject.Rotate(0,90,0);
+            if(!cooldown)
+            {
+                rotateObject.Rotate(0,90,0);
 
-            if(rotateValue < 3)
-            {
-                rotateValue++;
+                if(rotateValue < 3)
+                {
+                    rotateValue++;
+                }
+                else
+                {
+                    rotateValue = 0;
+                }
+
+                StartCoroutine(cooldownRotate());
             }
-            else
-            {
-                rotateValue = 0;
-            }
+
         }
 
+    }
+
+    IEnumerator cooldownRotate()
+    {
+        cooldown = true;
+        yield return new WaitForSeconds(1);
+        cooldown = false;
     }
 }
