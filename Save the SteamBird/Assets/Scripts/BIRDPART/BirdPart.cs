@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BirdPart : MonoBehaviour
 {
@@ -41,6 +42,11 @@ public class BirdPart : MonoBehaviour
     public AudioClip birdpartplace2;
     public AudioClip birdpartplace3;
     public AudioClip birdpartplace4;
+    #endregion
+
+    #region Objective
+    [Header("Objective")]
+    public TMP_Text currentObjective;
     #endregion
 
     /// <summary>
@@ -134,6 +140,8 @@ public class BirdPart : MonoBehaviour
             puzzleManager.BirdPartsRestored();
             audioSource.clip = birdpartplace4;
             audioSource.Play();
+
+            currentObjective.text = "Escape the room";
         }
 
     }

@@ -39,6 +39,16 @@ public class Timer : MonoBehaviour
     public AudioClip fiveMinute;
     #endregion
 
+    #region Objective
+    [Header("Objective")]
+    public TMP_Text currentObjective;
+    #endregion
+
+    #region Script
+    [Header("Script")]
+    public Interaction interaction;
+    #endregion
+
     void Start()
     {
         StartCoroutine(StartTimer());
@@ -121,7 +131,16 @@ public class Timer : MonoBehaviour
 
     IEnumerator StartTimer()
     {
+        yield return new WaitForSeconds(3);
+        audioSource.Play();
+
+        currentObjective.text = "Listen to the Steambird";
+
         yield return new WaitForSeconds(38);
         timerIsRunning = true;
+
+        currentObjective.text = "Solve the puzzles";
+
+        interaction.IntroCheck = true;
     }
 }

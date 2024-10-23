@@ -16,6 +16,8 @@ public class Interaction : MonoBehaviour
     public GameObject dropTXT;
 
     [SerializeField] LayerMask interactableLayer;
+
+    public bool IntroCheck;
     #endregion
 
     /// <summary>
@@ -25,7 +27,10 @@ public class Interaction : MonoBehaviour
     {
         if(!playerControls.winMovement)
         {
-            DoInteract();
+            if(IntroCheck)
+            {
+                DoInteract();
+            }
         }
         
     }

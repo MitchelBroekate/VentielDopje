@@ -6,6 +6,9 @@ public class Interactable : MonoBehaviour, IInteraction
     [Header("UnityEvent")]
     [SerializeField] UnityEvent onInteract;
 
+    [Header("IntroCheck")]
+    [SerializeField] bool IntroCheck;
+
     //Getter and Setter for the onInteract function
     UnityEvent IInteraction.onInteract
     {
@@ -17,5 +20,4 @@ public class Interactable : MonoBehaviour, IInteraction
     /// Invokes the onInteract
     /// </summary>
     public void Interact() => onInteract.Invoke();
-
 }
