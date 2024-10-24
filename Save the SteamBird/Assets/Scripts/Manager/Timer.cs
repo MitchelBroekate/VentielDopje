@@ -37,6 +37,9 @@ public class Timer : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip twoMinute;
     public AudioClip fiveMinute;
+
+    public AudioSource loseSource;
+    public AudioClip loseClip;
     #endregion
 
     #region Objective
@@ -84,6 +87,8 @@ public class Timer : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 UpdateTimerDisplay(timeRemaining);
+                loseSource.clip = loseClip;
+                loseSource.Play();
             }
         }
         else if(activateLose && timeRemaining <= 0)

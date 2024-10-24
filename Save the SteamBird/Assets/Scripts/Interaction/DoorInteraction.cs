@@ -15,6 +15,13 @@ public class DoorInteraction : MonoBehaviour
 
     public GameObject player;
     public GameObject playerCanvas;
+
+    public AudioSource audioSource;
+    public AudioClip doorSqueek;
+    public AudioClip doorOpen;
+    public AudioSource winSource;
+    public AudioClip winClip;
+
     void Update()
     {
         if (coroutineActive) 
@@ -34,6 +41,12 @@ public class DoorInteraction : MonoBehaviour
         }
         else
         {
+            audioSource.clip = doorOpen;
+            audioSource.Play();
+
+            winSource.clip = winClip;
+            winSource.Play();
+
             uIFade.canFade = true;
             timer.timerIsRunning = false;
             Cursor.lockState = CursorLockMode.None;
@@ -46,6 +59,9 @@ public class DoorInteraction : MonoBehaviour
 
     IEnumerator DoorWiggle()
     {
+        audioSource.clip = doorSqueek;
+        audioSource.Play();
+
         coroutineActive = true;
         doorRotate.Rotate(0, 0, 100);
         yield return new WaitForSeconds(0.5f);
@@ -53,21 +69,6 @@ public class DoorInteraction : MonoBehaviour
         coroutineActive = false;
         coroutineActive = true;
         doorRotate.Rotate(0, 0, -200);
-        yield return new WaitForSeconds(0.5f);
-
-        coroutineActive = false;
-        coroutineActive = true;
-        doorRotate.Rotate(0, 0, 100);
-        yield return new WaitForSeconds(0.5f);
-
-        coroutineActive = false;
-        coroutineActive = true;
-        doorRotate.Rotate(0, 0, -200);
-        yield return new WaitForSeconds(0.5f);
-
-        coroutineActive = false;
-        coroutineActive = true;
-        doorRotate.Rotate(0, 0, 100);
         yield return new WaitForSeconds(0.5f);
 
         coroutineActive = false;

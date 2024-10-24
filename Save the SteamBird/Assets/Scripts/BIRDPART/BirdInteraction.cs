@@ -10,6 +10,7 @@ public class BirdInteraction : MonoBehaviour
     public bool inObjective;
     public GameObject particle;
     public int birdPart;
+    public AudioSource audioSource;
     #endregion
 
     /// <summary>
@@ -25,5 +26,20 @@ public class BirdInteraction : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
         particle.SetActive(false);
 
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "GROUND")
+        {
+            if(audioSource.enabled == true)
+            {
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.enabled = true;
+            }
+        }
     }
 }

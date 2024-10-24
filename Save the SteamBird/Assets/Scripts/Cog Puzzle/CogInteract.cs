@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CogInteract : MonoBehaviour
@@ -10,6 +11,7 @@ public class CogInteract : MonoBehaviour
     public bool inInventory;
     public GameObject particle;
     public int cog;
+    public AudioSource audioSource;
     #endregion
 
     /// <summary>
@@ -25,5 +27,20 @@ public class CogInteract : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<BoxCollider>().enabled = false;
         particle.SetActive(false);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "GROUND")
+        {
+            if(audioSource.enabled == true)
+            {
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.enabled = true;
+            }
+        }
     }
 }

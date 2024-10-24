@@ -6,6 +6,8 @@ public class PipeInteractable : MonoBehaviour
     [SerializeField] PipePuzzleManager pipePuzzleManager;
     [SerializeField] int valveInt;
     [SerializeField] Transform rotateObject;
+
+    [SerializeField] AudioSource audioSource;
     #endregion
 
     void Update()
@@ -19,6 +21,8 @@ public class PipeInteractable : MonoBehaviour
     public void PipeInteract()
     {
         if(pipePuzzleManager.completionLock) return;
+
+        audioSource.Play();
 
         if(valveInt == pipePuzzleManager.currentAirvent)
         {

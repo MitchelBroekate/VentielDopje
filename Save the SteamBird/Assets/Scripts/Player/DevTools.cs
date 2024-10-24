@@ -22,6 +22,7 @@ public class DevTools : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
+            timer.timerIsRunning = true;
             timer.timeRemaining = 1;
         }
 

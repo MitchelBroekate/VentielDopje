@@ -67,9 +67,14 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] AudioSource steamAudio;
     #endregion
 
-    [Header("Win")]
     #region Win
+    [Header("Win")]
     public bool gameWon;
+    #endregion
+
+    #region SFX
+    [Header("SFX")]
+    [SerializeField] AudioSource audioSource;
     #endregion
 
     /// <summary>
@@ -111,6 +116,8 @@ public class PuzzleManager : MonoBehaviour
             allowWorkbenchMove = true;
 
             workbenchAudio.Play();
+
+            audioSource.Play();
         }
     }
 
@@ -253,6 +260,8 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log($"<color=#0092ff>Completed the Vault puzzle!</color>");
 
         bird2.transform.position = birdspawn2.position;
+
+        audioSource.Play();
     }
 
     /// <summary>
@@ -263,6 +272,8 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log($"<color=#0cff00>Completed the Pipe puzzle!</color>");
 
         bird3.transform.position = birdspawn3.position;
+
+        audioSource.Play();
     }
     
     /// <summary>
@@ -272,11 +283,15 @@ public class PuzzleManager : MonoBehaviour
     public void PipeRotateCompletion()
     {
         StartCoroutine(PipeRotateWait());
+
+        audioSource.Play();
     }
     public void BirdPartsRestored()
     {
         Debug.Log($"<color=#8d28ed>You Beat The Game!!!</color>");
         gameWon = true;
+
+        audioSource.Play();
     }
 
     IEnumerator PipeRotateWait()
