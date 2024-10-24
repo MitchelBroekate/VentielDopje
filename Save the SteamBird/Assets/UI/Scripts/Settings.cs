@@ -49,7 +49,7 @@ public class Settings : MonoBehaviour
         List<string> options = new List<string>();
         for (int i = 0; i < filteredResolution.Count; i++)
         {
-            string resolutionOption = filteredResolution[i].width + "X" + filteredResolution[i].height + " " + filteredResolution[i].refreshRate + "Hz";
+            string resolutionOption = filteredResolution[i].width + "X" + filteredResolution[i].height + " ";
             options.Add(resolutionOption);
 
             if (filteredResolution[i].width == Screen.width && filteredResolution[i].height == Screen.height)

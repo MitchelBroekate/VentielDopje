@@ -26794,7 +26794,7 @@ GameObject:
   - component: {fileID: 956975728}
   - component: {fileID: 956975727}
   m_Layer: 0
-  m_Name: CrouchTXT
+  m_Name: Crouch/ESCTXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26808,14 +26808,14 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956975725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 316617713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.042703703, y: 0.045168724}
-  m_AnchorMax: {x: 0.23500001, y: 0.11800001}
+  m_AnchorMin: {x: 0.071, y: 0.02870782}
+  m_AnchorMax: {x: 0.28562966, y: 0.1096461}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -26839,7 +26839,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ctrl - crouch
+  m_text: 'ESC - pause
+
+    ctrl - crouch
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e1157facc79bdc04db0f831560af988d, type: 2}
   m_sharedMaterial: {fileID: -3326432415506709537, guid: e1157facc79bdc04db0f831560af988d,
@@ -26867,7 +26871,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.5
+  m_fontSize: 19.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
