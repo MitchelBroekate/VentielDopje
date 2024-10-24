@@ -18,7 +18,6 @@ public class DoorInteraction : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip doorSqueek;
-    public AudioClip doorOpen;
     public AudioSource winSource;
     public AudioClip winClip;
 
@@ -41,9 +40,6 @@ public class DoorInteraction : MonoBehaviour
         }
         else
         {
-            audioSource.clip = doorOpen;
-            audioSource.Play();
-
             winSource.clip = winClip;
             winSource.Play();
 

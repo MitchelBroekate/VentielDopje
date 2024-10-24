@@ -10,6 +10,7 @@ public class PipeRotateIneractable : MonoBehaviour
 
     public bool puzzleComplete;
     bool cooldown;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -47,7 +48,9 @@ public class PipeRotateIneractable : MonoBehaviour
     IEnumerator cooldownRotate()
     {
         cooldown = true;
-        yield return new WaitForSeconds(1);
+        audioSource.Play();
+        yield return new WaitForSeconds(2);
+        audioSource.Stop();
         cooldown = false;
     }
 }
