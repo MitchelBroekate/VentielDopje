@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject playerCanvas;
     public GameObject vaultCanvas;
     public GameObject mainPlayer;
+    public GameObject winScreen;
+    public GameObject loseScreen;
    
     
         
@@ -48,7 +50,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-       if(mainPlayer.activeInHierarchy == false)
+       if(mainPlayer.activeInHierarchy == true)
         {
             playerCanvas.SetActive(true);
         }
@@ -69,12 +71,9 @@ public class PauseMenu : MonoBehaviour
     {
         if (context.performed)
         {
-            
-          
-            if(pause.activeInHierarchy == false && pauseSetting.activeInHierarchy == false)
+            if(pause.activeInHierarchy == false && pauseSetting.activeInHierarchy == false && winScreen.activeInHierarchy == false && loseScreen.activeInHierarchy == false)
             {
                 ShowPause();
-
             }
         }
     }
