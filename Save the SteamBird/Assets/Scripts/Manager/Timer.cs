@@ -40,6 +40,8 @@ public class Timer : MonoBehaviour
 
     public AudioSource loseSource;
     public AudioClip loseClip;
+
+    public AudioSource music;
     #endregion
 
     #region Objective
@@ -147,5 +149,7 @@ public class Timer : MonoBehaviour
         currentObjective.text = "Solve the puzzles";
 
         interaction.IntroCheck = true;
+
+        music.Play();
     }
 }
