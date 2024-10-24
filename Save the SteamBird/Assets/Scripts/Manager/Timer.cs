@@ -103,6 +103,7 @@ public class Timer : MonoBehaviour
             timerIsRunning = false;
 
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
             playerControls.winMovement = true;
 

@@ -26,6 +26,8 @@ public class UIFade : MonoBehaviour
             }
             else if(fadeCanvas.alpha >= 1)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 winCanvas.SetActive(true);
                 fadeCanvas.gameObject.SetActive(false);
             }

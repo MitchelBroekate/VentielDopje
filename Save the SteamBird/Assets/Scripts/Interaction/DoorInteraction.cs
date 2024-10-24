@@ -45,7 +45,6 @@ public class DoorInteraction : MonoBehaviour
 
             uIFade.canFade = true;
             timer.timerIsRunning = false;
-            Cursor.lockState = CursorLockMode.None;
             playerControls.winMovement = true;
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             playerCanvas.SetActive(false);
