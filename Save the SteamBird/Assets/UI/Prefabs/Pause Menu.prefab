@@ -248,7 +248,7 @@ PrefabInstance:
     - target: {fileID: 5711426022843488084, guid: 02cc06f80797e4f4c82db9236217e9ad,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HidePause
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5711426022843488084, guid: 02cc06f80797e4f4c82db9236217e9ad,
         type: 3}
