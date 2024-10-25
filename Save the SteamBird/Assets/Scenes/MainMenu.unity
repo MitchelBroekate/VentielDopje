@@ -14401,6 +14401,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 2610510493991621692, guid: 02cc06f80797e4f4c82db9236217e9ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3232978426918475796, guid: 02cc06f80797e4f4c82db9236217e9ad,
         type: 3}
       propertyPath: m_Pivot.x
@@ -24479,6 +24484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039283387805038879, guid: 2b1e1a3879c35a24ab364f82d621c69b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6568611695575414071, guid: 2b1e1a3879c35a24ab364f82d621c69b,
         type: 3}

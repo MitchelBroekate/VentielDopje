@@ -29,8 +29,40 @@ public class Settings : MonoBehaviour
     [System.Obsolete]
     public void Start()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        if (PlayerPrefs.HasKey("MusicVolume"))
+        {
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+        }
+
+        if (PlayerPrefs.HasKey("SFXVolume"))
+        {
+            sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
+        }
+        if (PlayerPrefs.HasKey("Gamma"))
+        {
+            gammaSlider.value = PlayerPrefs.GetFloat("Gamma", 1f);
+        }
+        else
+        {
+
+            if (liftGammaGain != null)
+            {
+
+                PlayerPrefs.SetFloat("Gamma", 0.1f);
+                Vector4 gamma = liftGammaGain.gamma.value;
+                gamma.w = 0.1f;
+                liftGammaGain.gamma.value = gamma;
+
+            }
+        }
     
         resolutions = Screen.resolutions;
         filteredResolution = new List<Resolution>();
