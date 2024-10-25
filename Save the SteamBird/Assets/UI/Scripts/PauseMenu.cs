@@ -14,6 +14,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject mainPlayer;
     public GameObject winScreen;
     public GameObject loseScreen;
+
+    public Interaction interaction;
    
     
         
@@ -33,6 +35,7 @@ public class PauseMenu : MonoBehaviour
             vaultCanvas.SetActive(false);
         }
 
+        interaction.IntroCheck = false;
 
         AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
@@ -58,6 +61,8 @@ public class PauseMenu : MonoBehaviour
         {
             vaultCanvas.SetActive(true);
         }
+
+        interaction.IntroCheck = true;
 
         AudioSource[] audios = FindObjectsOfType<AudioSource>();
 

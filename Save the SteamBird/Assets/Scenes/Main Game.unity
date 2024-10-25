@@ -21365,6 +21365,7 @@ MonoBehaviour:
   mainPlayer: {fileID: 1487407101}
   winScreen: {fileID: 800638977}
   loseScreen: {fileID: 800638976}
+  interaction: {fileID: 908641007}
 --- !u!114 &848706110
 MonoBehaviour:
   m_ObjectHideFlags: 0
