@@ -10854,6 +10854,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Birdcage (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4739022786196611081, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5372711552829586099, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -12562,6 +12567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Birdcage (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739022786196611081, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5372711552829586099, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
         type: 3}
@@ -29158,6 +29168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Birdcage
       objectReference: {fileID: 0}
+    - target: {fileID: 4739022786196611081, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5372711552829586099, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32500,6 +32515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Birdcage (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739022786196611081, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5372711552829586099, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
         type: 3}
@@ -44073,6 +44093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Birdcage (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4739022786196611081, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5372711552829586099, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -50045,6 +50070,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Birdcage (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739022786196611081, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5372711552829586099, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
         type: 3}
@@ -58122,6 +58152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Birdcage (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739022786196611081, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5372711552829586099, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
         type: 3}
@@ -71363,6 +71398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Birdcage (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739022786196611081, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5372711552829586099, guid: 455c84c4e8a5e2d4fa1c38c5c1484dbf,
         type: 3}
