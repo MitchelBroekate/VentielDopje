@@ -54,6 +54,13 @@ public class Timer : MonoBehaviour
     public Interaction interaction;
     #endregion
 
+    #region Steam
+    [Header("Steam")]
+    public GameObject steam1;
+    public GameObject steam2;
+    public AudioSource steamSource;
+    #endregion
+
     void Start()
     {
         StartCoroutine(StartTimer());
@@ -98,6 +105,9 @@ public class Timer : MonoBehaviour
             timeRemaining = 0;
             UpdateTimerDisplay(timeRemaining);
 
+            music.Stop();
+            audioSource.Stop();
+
             loseCanvas.SetActive(true);
 
             timerIsRunning = false;
@@ -109,8 +119,13 @@ public class Timer : MonoBehaviour
 
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-            playerCanvas.SetActive(false);
+            steam1.SetActive(true);
+            steam2.SetActive(true);
+
+            steamSource.Play();
             
+            playerCanvas.SetActive(false);
+
             activateLose = false;
         }
     }
