@@ -25,7 +25,6 @@ public class PlayerControls : MonoBehaviour
     #region ExtraKey Variables
     [Header("ExtraKeyVars")]
     public Interaction interaction;
-    public bool crouchPressedB;
     public bool invetoryFull;
 
     public bool winMovement;
@@ -50,7 +49,6 @@ public class PlayerControls : MonoBehaviour
         {
             Walk();
             CameraMovement();
-            CrouchPressed();
         }
     }  
 
@@ -85,46 +83,6 @@ public class PlayerControls : MonoBehaviour
 
         cam.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.Rotate(Vector3.up * mouseX);
-
-    }
-
-    /// <summary>
-    /// This function activates the crouch ability
-    /// </summary>
-    void CrouchPressed()
-    {
-        if(crouchPressedB)
-        {
-            cam.position = Vector3.Lerp(cam.position, camCrouch.position, 5 * Time.deltaTime);
-        }
-
-        if(!crouchPressedB)
-        {
-            cam.position = Vector3.Lerp(cam.position, camUncrouch.position, 5 * Time.deltaTime);
-        }
-    }
-
-/// <summary>
-/// This Function toggles the camera position when the crouch button is pressed
-/// </summary>
-/// <param name="value"></param>
-    void OnCrouch(InputValue value)
-    {
-        if(cam.position != camCrouch.position)
-        {
-            if(value.isPressed)
-            {
-                crouchPressedB = true;
-            }
-        }
-
-        if(cam.position != camUncrouch.position)
-        {
-            if(!value.isPressed)
-            {
-                crouchPressedB = false;
-            }   
-        }
 
     }
 

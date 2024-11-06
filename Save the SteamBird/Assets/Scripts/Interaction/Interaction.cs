@@ -50,13 +50,17 @@ public class Interaction : MonoBehaviour
             dropTXT.SetActive(false);
         }
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 1.5f, interactableLayer))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 3f, interactableLayer))
         {
-            if(hit.transform.tag != "COGPUZZLE")
+            if(hit.transform.tag != "COGPUZZLE" && hit.transform.tag != "STEAMBIRD")
             {
                 interactTXT.SetActive(true);
             }
             else if(hit.transform.gameObject.tag == "COGPUZZLE" && invetoryFull)
+            {
+                interactTXT.SetActive(true);
+            }
+            else if (hit.transform.gameObject.tag == "STEAMBIRD" && birdPartInInventory > 0)
             {
                 interactTXT.SetActive(true);
             }

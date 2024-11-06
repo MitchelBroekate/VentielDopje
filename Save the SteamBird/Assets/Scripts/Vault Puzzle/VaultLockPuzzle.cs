@@ -63,6 +63,12 @@ public class VaultLockPuzzle : MonoBehaviour
     public AudioClip vaultReset;
     #endregion
 
+    #region Interactables
+    [Header("Interactables")]
+    public GameObject interactable1;
+    public GameObject interactable2;
+    #endregion
+
     /// <summary>
     /// This function updates the cam switcher, check if you can switch cams and updates the vault code selector
     /// </summary>
@@ -203,7 +209,6 @@ public class VaultLockPuzzle : MonoBehaviour
                 vaultKeys.SetActive(false);
 
                 allowCamSwitch = true;
-                playerControls.crouchPressedB = false;
             }
         }
     }
@@ -226,6 +231,13 @@ public class VaultLockPuzzle : MonoBehaviour
 
             audioSource.clip = vaultOpen;
             audioSource.Play();
+
+            vaultCam.SetActive(false);
+            player.SetActive(true);
+            vaultKeys.SetActive(false);
+
+            interactable1.layer = 0;
+            interactable2.layer = 0;
         }
         else
         {

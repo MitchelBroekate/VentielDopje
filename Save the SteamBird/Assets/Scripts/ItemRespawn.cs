@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class ItemRespawn : MonoBehaviour
 {
-    public bool respawnType;
+    [SerializeField] GameObject partRespawnLocation;
     void OnCollisionEnter(Collision collision)
     {
-        if(respawnType)
+        if(collision.gameObject.tag == "BIRDPART" || collision.gameObject.tag == "COG")
         {
-            collision.transform.position += new Vector3(0, 0.3f, 0);
-        }
-        else
-        {
-            collision.transform.position += transform.forward + new Vector3(0, 0.3f, 0);
+            collision.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            collision.transform.position = partRespawnLocation.transform.position;
         }
     }
 }

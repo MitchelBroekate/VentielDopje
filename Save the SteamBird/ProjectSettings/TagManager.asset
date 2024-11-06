@@ -8,6 +8,7 @@ TagManager:
   - BIRDPART
   - COGPUZZLE
   - GROUND
+  - STEAMBIRD
   layers:
   - Default
   - TransparentFX

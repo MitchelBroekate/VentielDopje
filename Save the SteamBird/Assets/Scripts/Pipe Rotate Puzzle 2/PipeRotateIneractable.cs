@@ -49,7 +49,7 @@ public class PipeRotateIneractable : MonoBehaviour
     {
         cooldown = true;
         audioSource.Play();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         audioSource.Stop();
         cooldown = false;
     }

@@ -47,6 +47,7 @@ public class Timer : MonoBehaviour
     #region Objective
     [Header("Objective")]
     public TMP_Text currentObjective;
+    public int puzzlesRemaining;
     #endregion
 
     #region Script
@@ -162,10 +163,15 @@ public class Timer : MonoBehaviour
         yield return new WaitForSeconds(38);
         timerIsRunning = true;
 
-        currentObjective.text = "Solve the puzzles";
+        currentObjective.text = "Solve the puzzles:" + puzzlesRemaining + "/4" ;
 
         interaction.IntroCheck = true;
 
         music.Play();
+    }
+
+    public void SetCurrentObjective()
+    {
+        currentObjective.text = "Solve the puzzles:" + puzzlesRemaining + "/4" ;
     }
 }

@@ -67,6 +67,14 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] AudioSource steamAudio;
     #endregion
 
+    #region SteamPipe
+    [Header("SteamPipe")]
+    [SerializeField] ParticleSystem steamPipePiece1;
+    [SerializeField] ParticleSystem steamPipePiece2;
+    [SerializeField] ParticleSystem steamPipePiece3;
+    [SerializeField] AudioSource steamPipeAudio;
+    #endregion
+
     #region Win
     [Header("Win")]
     public bool gameWon;
@@ -77,6 +85,11 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     #endregion
 
+    #region Objective
+    [Header("Objective")]
+    [SerializeField] Timer timer;
+    #endregion
+    
     /// <summary>
     /// This function activates the CogRandomSpawn and SetVaultCodeTime at the start of the game
     /// </summary>
@@ -118,6 +131,9 @@ public class PuzzleManager : MonoBehaviour
             workbenchAudio.Play();
 
             audioSource.Play();
+
+            timer.puzzlesRemaining++;
+            timer.SetCurrentObjective();
         }
     }
 
@@ -262,6 +278,9 @@ public class PuzzleManager : MonoBehaviour
         bird2.transform.position = birdspawn2.position;
 
         audioSource.Play();
+
+        timer.puzzlesRemaining++;
+        timer.SetCurrentObjective();
     }
 
     /// <summary>
@@ -274,18 +293,29 @@ public class PuzzleManager : MonoBehaviour
         bird3.transform.position = birdspawn3.position;
 
         audioSource.Play();
+
+        StartCoroutine(PipeSteamWait());
+
+        timer.puzzlesRemaining++;
+        timer.SetCurrentObjective();
     }
     
     /// <summary>
     /// This function activates the win condition and stops the timer
     /// </summary>
-
     public void PipeRotateCompletion()
     {
         StartCoroutine(PipeRotateWait());
 
         audioSource.Play();
+
+        timer.puzzlesRemaining++;
+        timer.SetCurrentObjective();
     }
+
+    /// <summary>
+    /// This function sets the gamestate to win and gives your final objective
+    /// </summary>
     public void BirdPartsRestored()
     {
         Debug.Log($"<color=#8d28ed>You Beat The Game!!!</color>");
@@ -294,6 +324,10 @@ public class PuzzleManager : MonoBehaviour
         audioSource.Play();
     }
 
+    /// <summary>
+    /// This coroutine enables when you complete the PipeRotate puzzle and spawns the birdpart
+    /// </summary>
+    /// <returns></returns>
     IEnumerator PipeRotateWait()
     {
         yield return new WaitForSeconds(4);
@@ -309,5 +343,22 @@ public class PuzzleManager : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         steamAudio.Stop();
+    }
+
+    /// <summary>
+    /// This coroutine plays a particle and a sound when the Steampipe puzzle is completed
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator PipeSteamWait()
+    {
+        steamPipePiece1.Play();
+        steamPipePiece2.Play();
+        steamPipePiece3.Play();
+        steamPipeAudio.Play();
+
+        yield return new WaitForSeconds(5);
+
+        steamAudio.Stop();
+
     }
 }
