@@ -33,6 +33,7 @@ public class VaultLockPuzzle : MonoBehaviour
     [Header("Scripts")]
     public PuzzleManager puzzleManager;
     public PlayerControls playerControls;
+    public PauseMenu pauseMenu;
     #endregion
 
     #region VaultKeybind
@@ -97,6 +98,8 @@ public class VaultLockPuzzle : MonoBehaviour
     /// <param name="context"></param>
     public void VaultLockBack(InputAction.CallbackContext context)
     {
+        if(pauseMenu.isPaused) return;
+
         if(context.performed)
         {
             rotateAngle.Rotate(0, 0, 36);
@@ -121,6 +124,8 @@ public class VaultLockPuzzle : MonoBehaviour
     /// <param name="context"></param>
     public void VaultLockForward(InputAction.CallbackContext context)
     {
+        if(pauseMenu.isPaused) return;
+
         if(context.performed)
         {
             rotateAngle.Rotate(0, 0, -36);
@@ -144,8 +149,10 @@ public class VaultLockPuzzle : MonoBehaviour
     /// </summary>
     void VaultLockSelect()
     {
-        if(vaultCam.activeInHierarchy == true)
-        {
+        if(pauseMenu.isPaused) return;
+
+        if(!vaultCam.activeInHierarchy) return;
+
             if(Input.GetMouseButtonDown(0))
             {
                 audioSource.clip = vaultSelect;
@@ -180,8 +187,6 @@ public class VaultLockPuzzle : MonoBehaviour
 
                 Debug.Log("(" + currentCodePiece + ")" + " is the current code piece");
             }
-        }
-        
     }
 
     /// <summary>

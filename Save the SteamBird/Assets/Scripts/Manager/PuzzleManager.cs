@@ -358,7 +358,7 @@ public class PuzzleManager : MonoBehaviour
 
         yield return new WaitForSeconds(5);
 
-        steamAudio.Stop();
+        steamPipeAudio.Stop();
 
     }
 }

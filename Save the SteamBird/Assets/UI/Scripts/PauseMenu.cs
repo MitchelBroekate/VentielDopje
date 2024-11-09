@@ -17,10 +17,11 @@ public class PauseMenu : MonoBehaviour
 
     public Interaction interaction;
    
-    
+    public bool isPaused;
         
     public void ShowPause()
     {
+        isPaused = true;
         pause.SetActive(true);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
@@ -48,6 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     public void HidePause()
     {
+        isPaused = false;
         pause.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
