@@ -9712,11 +9712,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits
       objectReference: {fileID: 0}
+    - target: {fileID: 1070141232680122641, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3460193209400199492, guid: 72ceb933cafb79946b2b5e819262cb1c,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1751918453}
+    - target: {fileID: 5448627602987508957, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.7148891
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448627602987508957, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448627602987508957, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.32900003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448627602987508957, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.105646096
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448627602987508957, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448627602987508957, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448627602987508957, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448627602987508957, guid: 72ceb933cafb79946b2b5e819262cb1c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6360986502054777120, guid: 72ceb933cafb79946b2b5e819262cb1c,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
